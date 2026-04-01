@@ -23,69 +23,74 @@
     };
   };
 
-  outputs = {
-    flake-parts,
-    treefmt-nix,
-    ...
-  }@inputs:
+  outputs =
+    {
+      flake-parts,
+      treefmt-nix,
+      home-manager,
+      ...
+    }@inputs:
 
-  flake-parts.lib.mkFlake { inherit inputs; } {
-    systems = [
-      "aarch64-darwin"
-      "aarch64-linux"
-      "x86_64-linux"
-    ];
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "aarch64-darwin"
+        "aarch64-linux"
+        "x86_64-linux"
+      ];
 
-    imports = [
-      treefmt-nix.flakeModule
-    ];
+      imports = [
+        treefmt-nix.flakeModule
+        home-manager.flakeModules.home-manager
+      ];
 
-    flake =
-      { ... }:
-      {
+      flake = {
+        darwinConfigurations = {
+          mac = import ./hosts/mac { inherit inputs; };
+        };
         homeConfigurations = {
-          myHomeConfig = inputs.home-manager.lib.homeManagerConfiguration;
+          linux = import ./hosts/linux { inherit inputs; };
         };
       };
 
-    perSystem =
-      {
-        pkgs,
-        ...
-      }:
-      {
-        treefmt = {
-          projectRootFile = "flake.nix";
-          programs = {
-            nixfmt.enable = true;
-          };
-        };
-
-        apps = {
-          update-flake = {
-            type = "app";
-            program = toString (
-              pkgs.writeShellScript "update-flake" ''
-                set -e
-                echo "Updating flake..."
-                nix flake update --show-trace
-                echo "flake update complete!"
-              ''
-            );
+      perSystem =
+        {
+          pkgs,
+          ...
+        }:
+        {
+          treefmt = {
+            projectRootFile = "flake.nix";
+            programs = {
+              nixfmt.enable = true;
+            };
           };
 
-          update-home-manager = {
-            type = "app";
-            program = toString (
-              pkgs.writeShellScript "update-home-manager" ''
-                set -e
-                echo "Updating home-manager..."
-                nix run nixpkgs#home-manager -- switch --flake .#myHomeConfig --show-trace
-                echo "home-manager update complete!"
-              ''
-            );
+          apps = {
+            update-flake = {
+              type = "app";
+              program = toString (
+                pkgs.writeShellScript "update-flake" ''
+                  set -e
+                  echo "Updating flake..."
+                  nix flake update --show-trace
+                  echo "flake update complete!"
+                ''
+              );
+            };
+
+            update-home-manager = {
+              type = "app";
+              program = toString (
+                pkgs.writeShellScript "update-home-manager" ''
+                  set -e
+                  HOST="''${1:-linux}"
+                  echo "updating home-manager for host: $HOST..."
+                  nix  run nixpkgs#home-manager -- switch --flake .#"$HOST" --show-trace
+                  echo "home-manager update complete!"
+                ''
+              );
+            };
           };
         };
-      };
-  };
+    };
 }
