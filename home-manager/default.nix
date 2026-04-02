@@ -4,16 +4,6 @@
   ...
 }:
 {
-  nix = {
-    enable = true;
-    package = pkgs.nix;
-    settings.experimental-features =
-    [
-      "nix-command"
-      "flakes"
-    ];
-  };
-
   xdg = {
     enable = true;
 
@@ -33,6 +23,7 @@
   };
 
   imports = [
+    ./nix
     ./zsh
     ./tmux
   ];
