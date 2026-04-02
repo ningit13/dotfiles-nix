@@ -18,6 +18,6 @@
   };
 
   home.file."${config.programs.zsh.oh-my-zsh.custom}/themes/my-theme.zsh-theme" = {
-    source = ./themes/my-theme.zsh-theme;
+    source = ./customizations/themes/my-theme.zsh-theme;
   };
 }
