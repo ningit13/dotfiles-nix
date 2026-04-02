@@ -27,7 +27,6 @@
     {
       flake-parts,
       treefmt-nix,
-      home-manager,
       ...
     }@inputs:
 
@@ -40,13 +39,12 @@
 
       imports = [
         treefmt-nix.flakeModule
-        home-manager.flakeModules.home-manager
       ];
 
       flake = {
-        darwinConfigurations = {
-          mac = import ./hosts/mac { inherit inputs; };
-        };
+        # darwinConfigurations = {
+        #   mac = import ./hosts/mac { inherit inputs; };
+        # };
         homeConfigurations = {
           linux = import ./hosts/linux { inherit inputs; };
         };
