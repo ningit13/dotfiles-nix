@@ -34,5 +34,6 @@
 
   imports = [
     ./zsh
+    ./tmux
   ];
 }
