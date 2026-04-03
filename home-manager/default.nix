@@ -26,5 +26,6 @@
     ./nix
     ./zsh
     ./tmux
+    ./neovim
   ];
 }
