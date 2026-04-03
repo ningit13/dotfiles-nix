@@ -47,6 +47,7 @@
         # };
         homeConfigurations = {
           linux = import ./hosts/linux { inherit inputs; };
+          work = import ./hosts/work { inherit inputs; };
         };
       };
 
