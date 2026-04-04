@@ -23,9 +23,8 @@
   };
 
   imports = [
-    ./nix
-    ./zsh
-    ./tmux
-    ./neovim
+    ./misc
+    ./programs
+    ./services
   ];
 }
