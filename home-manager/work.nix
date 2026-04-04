@@ -22,7 +22,8 @@
   };
 
   imports = [
-    ./nix
-    ./neovim
+    ./misc/nix
+    ./programs/neovim
+    ./services/nix-gc
   ];
 }
