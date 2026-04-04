@@ -1,8 +1,61 @@
 { pkgs, ... }:
 {
-  # Requirements
-  # git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
-  programs.tmux.enable = true;
-  xdg.configFile.tmux.source = ./config/tmux;
+  programs.tmux = {
+    enable = true;
+    plugins = import ./plugins.nix { inherit pkgs; };
+
+    extraConfig = ''
+      # use vim key bindings in copy mode
+      set-option -g mode-keys vi
+
+      # set pane border color
+      set-option -g pane-active-border-style "fg=brightgreen"
+      set-option -g pane-border-style        "fg=brightblack"
+
+      # Change prefix key C-b -> C-f
+      unbind-key C-b
+      set-option -g prefix C-f
+      bind-key C-f send-prefix
+
+      bind-key | split-window -h     # split window horizontally
+      bind-key - split-window -v     # split window vertically
+
+      bind-key j select-pane -D      # switch pane Down
+      bind-key l select-pane -R      # switch pane Right
+      bind-key h select-pane -L      # switch pane Left
+      bind-key k select-pane -U      # switch pane Up
+
+      bind-key C-j resize-pane -D 3  # resize pane Down
+      bind-key C-l resize-pane -R 3  # resize pane Right
+      bind-key C-h resize-pane -L 3  # resize pane Left
+      bind-key C-k resize-pane -U 3  # resize pane Up
+      bind-key z   resize-pane -Z    # resize toggle zoomed and unzoomed
+
+      bind-key J swap-pane -D        # swap pane to Down
+      bind-key K swap-pane -U        # swap pane to Up
+
+      # reload config file with prefix + r
+      bind-key r source-file $XDG_CONFIG_HOME/tmux/tmux.conf \; display-message "Config reloaded!"
+
+      # switch session to 'user input session name'
+      bind-key C-s command-prompt -p "Session Name:" "switch-client -t '%%'"
+
+      # display popup
+      bind-key P display-popup -E -w 60% -h 60% -x C
+
+      # synchronize panes
+      bind-key a set-window-option synchronize-panes
+
+      # extra key bidings
+      bind-key -n M-s if -F "#{==:#{prefix},C-f}" \
+          "set-option -g prefix C-a ; \
+          unbind-key C-f ; \
+          bind-key C-f send-prefix" \
+          "set-option -g prefix C-f ; \
+          unbind-key C-a ; \
+          bind-key C-a send-prefix"
+    '';
+  };
+
   xdg.configFile.tmux-powerline.source = ./config/tmux-powerline;
 }
