@@ -47,6 +47,7 @@
         # };
         homeConfigurations = {
           linux = import ./hosts/linux { inherit inputs; };
+          wsl = import ./hosts/wsl { inherit inputs; };
           work = import ./hosts/work { inherit inputs; };
         };
       };

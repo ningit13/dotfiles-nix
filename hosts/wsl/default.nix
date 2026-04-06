@@ -11,6 +11,9 @@ let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
+    overlays = [
+      inputs.neovim-nightly-overlay.overlays.default
+    ];
   };
 
 in
@@ -18,9 +21,8 @@ home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
 
   modules = [
-    ../../home-manager/misc
-    ../../home-manager/programs/neovim
-    ../../home-manager/services
+    ../../home-manager
+    ../../home-manager/wsl.nix
     {
       home = {
         username = username;

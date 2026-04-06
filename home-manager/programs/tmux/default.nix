@@ -27,9 +27,6 @@
       # reload config file with prefix + r
       bind-key r source-file $XDG_CONFIG_HOME/tmux/tmux.conf \; display-message "Config reloaded!"
 
-      # switch session to 'user input session name'
-      bind-key C-s command-prompt -p "Session Name:" "switch-client -t '%%'"
-
       # display popup
       bind-key P display-popup -E -w 60% -h 60% -x C
 
