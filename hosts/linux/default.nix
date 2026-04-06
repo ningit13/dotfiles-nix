@@ -5,8 +5,8 @@ let
     ;
   inherit (inputs) nixpkgs;
 
-  username = "kohei";
-  system = "x86_64-linux";
+  profile = import ./profile.nix;
+  inherit (profile) system username;
 
   pkgs = import nixpkgs {
     inherit system;
@@ -19,6 +19,9 @@ let
 in
 home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
+  extraSpecialArgs = {
+    inherit profile;
+  };
 
   modules = [
     ../../home-manager
