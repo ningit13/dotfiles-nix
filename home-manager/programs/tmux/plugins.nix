@@ -5,6 +5,17 @@ let
     fetchFromGitHub
     ;
 
+  powerline = tmuxPlugins.mkTmuxPlugin {
+    pluginName = "powerline";
+    version = "3.2.0";
+    rtpFilePath = "main.tmux";
+    src = fetchFromGitHub {
+      owner = "erikw";
+      repo = "tmux-powerline";
+      rev = "6079ace8d534a01d4d964b8b854b223f72edaf4b";
+      hash = "sha256-0ibtd1gTyr8hJDBsAfmgH3qr0zC0o2Fn0tjN/S+zxgA=";
+    };
+  };
   treemux = tmuxPlugins.mkTmuxPlugin {
     pluginName = "treemux";
     version = "";
@@ -16,23 +27,30 @@ let
       sha256 = "sha256-1mCxTv3KqUsCjeI7X02NBMRJJzbL0cE1Gg20FrMDChI=";
     };
   };
+  window-name = tmuxPlugins.mkTmuxPlugin {
+    pluginName = "tmux-window-name";
+    version = "";
+    rtpFilePath = "tmux_window_name.tmux";
+    src = pkgs.fetchFromGitHub {
+      owner = "ofirgall";
+      repo = "tmux-window-name";
+      rev = "master";
+      sha256 = "sha256-/ImZy4VijniRtWxrf89XRdKK+bpAOttP4ZtgPNoSrHI=";
+    };
+  };
+
 in
 with pkgs.tmuxPlugins;
 [
   sensible
+  resurrect
   {
-    plugin = tmuxPlugins.mkTmuxPlugin {
-      pluginName = "powerline";
-      version = "3.2.0";
-      rtpFilePath = "main.tmux";
-      src = fetchFromGitHub {
-        owner = "erikw";
-        repo = "tmux-powerline";
-        rev = "6079ace8d534a01d4d964b8b854b223f72edaf4b";
-        hash = "sha256-0ibtd1gTyr8hJDBsAfmgH3qr0zC0o2Fn0tjN/S+zxgA=";
-      };
-    };
+    plugin = tmuxPlugins.continuum;
+    extraConfig = ''
+      set -g @continuum-restore 'on'
+    '';
   }
+  { plugin = powerline; }
   {
     plugin = treemux;
     extraConfig = ''
@@ -46,17 +64,7 @@ with pkgs.tmuxPlugins;
     '';
   }
   {
-    plugin = tmuxPlugins.mkTmuxPlugin {
-      pluginName = "tmux-window-name";
-      version = "";
-      rtpFilePath = "tmux_window_name.tmux";
-      src = pkgs.fetchFromGitHub {
-        owner = "ofirgall";
-        repo = "tmux-window-name";
-        rev = "master";
-        sha256 = "sha256-/ImZy4VijniRtWxrf89XRdKK+bpAOttP4ZtgPNoSrHI=";
-      };
-    };
+    plugin = window-name;
     extraConfig = ''
       set -g @tmux_window_name_shells "['bash', 'fish', 'sh', 'zsh']"
       set -g @tmux_window_dir_programs "['nvim', 'vim', 'vi', 'git']"
