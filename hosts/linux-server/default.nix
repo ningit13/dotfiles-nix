@@ -22,7 +22,6 @@ home-manager.lib.homeManagerConfiguration {
 
   modules = [
     ../../home-manager
-    ../../home-manager/graphical.nix
     {
       home = {
         username = username;

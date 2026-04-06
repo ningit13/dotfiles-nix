@@ -46,9 +46,10 @@
         #   mac = import ./hosts/mac { inherit inputs; };
         # };
         homeConfigurations = {
-          linux = import ./hosts/linux { inherit inputs; };
-          wsl = import ./hosts/wsl { inherit inputs; };
-          work = import ./hosts/work { inherit inputs; };
+          linux        = import ./hosts/linux        { inherit inputs; };
+          linux-server = import ./hosts/linux-server { inherit inputs; };
+          wsl          = import ./hosts/wsl          { inherit inputs; };
+          work         = import ./hosts/work         { inherit inputs; };
         };
       };
 
@@ -83,7 +84,7 @@
               program = toString (
                 pkgs.writeShellScript "update-home-manager" ''
                   set -e
-                  HOST="''${1:-linux}"
+                  HOST="''${1:-linux-server}"
                   echo "updating home-manager for host: $HOST..."
                   nix  run nixpkgs#home-manager -- switch --flake .#"$HOST" --show-trace
                   echo "home-manager update complete!"

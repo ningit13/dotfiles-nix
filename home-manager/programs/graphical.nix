@@ -1,0 +1,7 @@
+{ ... }:
+{
+  imports = [
+    ./alacritty
+    ./alacritty-theme
+  ];
+}

@@ -1,4 +1,6 @@
 { ... }:
 {
-  imports = [];
+  imports = [
+    ./programs/graphical.nix
+  ];
 }
