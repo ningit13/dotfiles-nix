@@ -22,7 +22,7 @@
       };
 
       mouse = {
-        hide_when_typing
+        hide_when_typing = true;
         bindings = [
           {
             mouse = "Right";
