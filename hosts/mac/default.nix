@@ -1,6 +1,6 @@
-{ ... }:
+{ inputs, ... }:
 let
-  inherit (inputs) nixpkgs nix-darwin;
+  inherit (inputs) nixpkgs nix-darwin home-manager;
 
   profile = import ./profile.nix;
   inherit (profile) system username;
@@ -16,12 +16,13 @@ let
 in
 nix-darwin.lib.darwinSystem {
   inherit pkgs;
-  extraSpecialArgs = {
+  specialArgs = {
     inherit profile;
   };
 
   modules = [
     ../../nix-darwin
+    home-manager.darwinModules.home-manager
     {
       home-manager = {
         users.${username} = {
@@ -29,6 +30,9 @@ nix-darwin.lib.darwinSystem {
             ../../home-manager
             ../../home-manager/graphical.nix
           ];
+        };
+        extraSpecialArgs = {
+          inherit profile;
         };
       };
     }
