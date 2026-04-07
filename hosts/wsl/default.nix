@@ -1,12 +1,9 @@
 { inputs }:
 let
-  inherit (inputs)
-    home-manager
-    ;
-  inherit (inputs) nixpkgs;
+  inherit (inputs) nixpkgs home-manager;
 
   profile = import ./profile.nix;
-  inherit (profile) system username;
+  inherit (profile) system username homeDirectory;
 
   pkgs = import nixpkgs {
     inherit system;
@@ -26,11 +23,6 @@ home-manager.lib.homeManagerConfiguration {
   modules = [
     ../../home-manager
     ../../home-manager/wsl.nix
-    {
-      home = {
-        username = username;
-        homeDirectory = "/home/${username}";
-      };
-    }
+    { home.homeDirectory = homeDirectory; }
   ];
 }
