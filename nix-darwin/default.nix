@@ -6,6 +6,8 @@ in
   users.users.${username}.home = homeDirectory;
 
   imports = [
-    ./system
+    ../nix
+    ./config/fonts.nix
+    ./config/system.nix
   ];
 }

@@ -21,6 +21,7 @@ home-manager.lib.homeManagerConfiguration {
   };
 
   modules = [
+    ../../nix
     ../../home-manager
     ../../home-manager/graphical.nix
     { home.homeDirectory = homeDirectory; }

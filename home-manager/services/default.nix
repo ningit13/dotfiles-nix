@@ -1,6 +1,4 @@
 { ... }:
 {
-  imports = [
-    ./nix-gc
-  ];
+  imports = [];
 }

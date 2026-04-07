@@ -21,6 +21,7 @@ home-manager.lib.homeManagerConfiguration {
   };
 
   modules = [
+    ../../nix
     ../../home-manager/misc
     ../../home-manager/programs/neovim
     ../../home-manager/services
