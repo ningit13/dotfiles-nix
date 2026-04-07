@@ -5,5 +5,7 @@ in
 {
   users.users.${username}.home = homeDirectory;
 
-  imports = [];
+  imports = [
+    ./system
+  ];
 }
