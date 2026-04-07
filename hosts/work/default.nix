@@ -3,7 +3,7 @@ let
   inherit (inputs) nixpkgs home-manager;
 
   profile = import ./profile.nix;
-  inherit (profile) system username homeDirectory;
+  inherit (profile) system homeDirectory;
 
   pkgs = import nixpkgs {
     inherit system;
