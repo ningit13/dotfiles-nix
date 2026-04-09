@@ -3,7 +3,7 @@
   imports = [
     ./git
     ./jq
-    ./neovim
+    ./nixvim
     ./python
     ./tmux
     ./zsh

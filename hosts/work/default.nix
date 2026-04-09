@@ -21,9 +21,10 @@ home-manager.lib.homeManagerConfiguration {
   };
 
   modules = [
+    pkgs.nixvim.homeManagerModules.nixvim
     ../../nix
     ../../home-manager/misc
-    ../../home-manager/programs/neovim
+    ../../home-manager/programs/nixvim
     ../../home-manager/services
     { home.homeDirectory = homeDirectory; }
   ];
