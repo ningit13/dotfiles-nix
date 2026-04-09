@@ -13,9 +13,6 @@ let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
-    overlays = [
-      inputs.neovim-nightly-overlay.overlays.default
-    ];
   };
 
 in
@@ -38,6 +35,11 @@ nix-darwin.lib.darwinSystem {
         };
         sharedModules = [
           nixvim.homeModules.nixvim
+          {
+            nixpkgs.overlays = [
+              inputs.neovim-nightly-overlay.overlays.default
+            ];
+          }
         ];
         extraSpecialArgs = {
           inherit profile;

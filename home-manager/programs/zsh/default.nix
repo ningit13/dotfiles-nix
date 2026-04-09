@@ -5,6 +5,11 @@
     dotDir = "${config.xdg.configHome}/zsh";
     history.path = "${config.xdg.stateHome}/zsh/history";
 
+    initContent = ''
+      # Ignore insecure completion-dependent directories
+      compaudit() { return 0; }
+    '';
+
     oh-my-zsh = {
       enable = true;
       custom = "${config.programs.zsh.dotDir}/customizations";
