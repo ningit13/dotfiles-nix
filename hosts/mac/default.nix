@@ -26,7 +26,6 @@ nix-darwin.lib.darwinSystem {
   };
 
   modules = [
-    nixvim.homeModules.nixvim
     ../../nix-darwin
     home-manager.darwinModules.home-manager
     {
@@ -37,6 +36,9 @@ nix-darwin.lib.darwinSystem {
             ../../home-manager/graphical.nix
           ];
         };
+        sharedModules = [
+          nixvim.homeModules.nixvim
+        ];
         extraSpecialArgs = {
           inherit profile;
         };
