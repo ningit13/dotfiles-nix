@@ -1,6 +1,6 @@
 { inputs }:
 let
-  inherit (inputs) nixpkgs home-manager;
+  inherit (inputs) nixpkgs home-manager nixvim;
 
   profile = import ./profile.nix;
   inherit (profile) system homeDirectory;
@@ -21,7 +21,7 @@ home-manager.lib.homeManagerConfiguration {
   };
 
   modules = [
-    pkgs.nixvim.homeManagerModules.nixvim
+    nixvim.homeModules.nixvim
     ../../nix
     ../../home-manager
     ../../home-manager/graphical.nix

@@ -1,6 +1,6 @@
 { inputs, ... }:
 let
-  inherit (inputs) nixpkgs nix-darwin home-manager;
+  inherit (inputs) nixpkgs nix-darwin home-manager nixvim;
 
   profile = import ./profile.nix;
   inherit (profile) system username;
@@ -21,6 +21,7 @@ nix-darwin.lib.darwinSystem {
   };
 
   modules = [
+    nixvim.homeModules.nixvim
     ../../nix-darwin
     home-manager.darwinModules.home-manager
     {
