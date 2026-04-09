@@ -50,10 +50,10 @@
           mac = import ./hosts/mac { inherit inputs; };
         };
         homeConfigurations = {
-          linux        = import ./hosts/linux        { inherit inputs; };
+          linux = import ./hosts/linux { inherit inputs; };
           linux-server = import ./hosts/linux-server { inherit inputs; };
-          wsl          = import ./hosts/wsl          { inherit inputs; };
-          work         = import ./hosts/work         { inherit inputs; };
+          wsl = import ./hosts/wsl { inherit inputs; };
+          work = import ./hosts/work { inherit inputs; };
         };
       };
 
