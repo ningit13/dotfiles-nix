@@ -7,6 +7,7 @@
       ./bitwarden
       ./brave
       ./obsidian
+      ./vscode
     ];
   };
 
