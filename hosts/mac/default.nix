@@ -27,6 +27,9 @@ nix-darwin.lib.darwinSystem {
     home-manager.darwinModules.home-manager
     {
       home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = false;
+
         users.${username} = {
           imports = [
             ../../home-manager
