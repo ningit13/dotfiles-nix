@@ -14,8 +14,10 @@
       enable = true;
       custom = "${config.programs.zsh.dotDir}/customizations";
       plugins = [
-        "git"
+        "eza"
+        "fzf"
         "docker"
+        "git"
         "tmux"
       ];
       theme = "my-theme";
