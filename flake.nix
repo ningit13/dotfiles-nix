@@ -78,33 +78,6 @@
               nixfmt.enable = true;
             };
           };
-
-          apps = {
-            update-flake = {
-              type = "app";
-              program = toString (
-                pkgs.writeShellScript "update-flake" ''
-                  set -e
-                  echo "Updating flake..."
-                  nix flake update --show-trace
-                  echo "flake update complete!"
-                ''
-              );
-            };
-
-            update-home-manager = {
-              type = "app";
-              program = toString (
-                pkgs.writeShellScript "update-home-manager" ''
-                  set -e
-                  HOST="''${1:-linux-server}"
-                  echo "updating home-manager for host: $HOST..."
-                  nix  run nixpkgs#home-manager -- switch --flake .#"$HOST" --show-trace
-                  echo "home-manager update complete!"
-                ''
-              );
-            };
-          };
         };
     };
 }
