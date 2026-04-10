@@ -5,6 +5,8 @@ let
     nix-darwin
     home-manager
     nixvim
+    brew-nix
+    mac-app-util
     ;
 
   profile = import ./profile.nix;
@@ -24,6 +26,8 @@ nix-darwin.lib.darwinSystem {
 
   modules = [
     ../../nix-darwin
+    brew-nix.darwinModules.default
+    mac-app-util.darwinModules.default
     home-manager.darwinModules.home-manager
     {
       home-manager = {
@@ -33,10 +37,11 @@ nix-darwin.lib.darwinSystem {
         users.${username} = {
           imports = [
             ../../home-manager
-            ../../home-manager/graphical.nix
+            (../../home-manager/graphical.nix).mac
           ];
         };
         sharedModules = [
+          mac-app-util.homeManagerModules.default
           nixvim.homeModules.nixvim
           {
             nixpkgs.overlays = [

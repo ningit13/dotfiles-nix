@@ -8,6 +8,11 @@
       NSGlobalDomain = {
         "com.apple.swipescrolldirection" = false;
       };
+
+      dock = {
+        launchanim = false;
+        autohide = true;
+      };
     };
   };
 }

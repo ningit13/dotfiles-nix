@@ -24,6 +24,7 @@
       url = "github:BatteredBunny/brew-api";
       flake = false;
     };
+    mac-app-util.url = "github:hraban/mac-app-util";
 
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
