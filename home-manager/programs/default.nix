@@ -2,6 +2,7 @@
 {
   imports = [
     ./eza
+    ./fd
     ./fzf
     ./git
     ./jq
