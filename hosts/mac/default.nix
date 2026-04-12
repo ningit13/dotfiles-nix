@@ -15,6 +15,9 @@ let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
+    overlays = [
+      inputs.brew-nix.overlays.default
+    ];
   };
 
 in
@@ -31,14 +34,13 @@ nix-darwin.lib.darwinSystem {
     home-manager.darwinModules.home-manager
     {
       home-manager = {
-        useGlobalPkgs = true;
+        #useGlobalPkgs = true;
         useUserPackages = false;
 
         users.${username} = {
           imports = [
             ../../home-manager
-            (../../home-manager/graphical.nix).mac
-          ];
+          ] ++ (import ../../home-manager/graphical.nix).mac;
         };
         sharedModules = [
           mac-app-util.homeManagerModules.default

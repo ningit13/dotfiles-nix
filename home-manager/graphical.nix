@@ -1,15 +1,8 @@
-{ ... }:
 {
-  linux = {
-    imports = [
-      ./fonts
-      (./programs/graphical.nix).linux
-    ];
-  };
+  linux = [
+    ./fonts
+    (import ./programs/graphical.nix).linux
+  ];
 
-  mac = {
-    imports = [
-      (./programs/graphical.nix).mac
-    ];
-  };
+  mac = (import ./programs/graphical.nix).mac;
 }
