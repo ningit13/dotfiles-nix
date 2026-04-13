@@ -40,7 +40,8 @@ nix-darwin.lib.darwinSystem {
         users.${username} = {
           imports = [
             ../../home-manager
-          ] ++ (import ../../home-manager/graphical.nix).mac;
+          ]
+          ++ (import ../../home-manager/graphical.nix).mac;
         };
         sharedModules = [
           mac-app-util.homeManagerModules.default

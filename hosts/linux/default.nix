@@ -25,5 +25,6 @@ home-manager.lib.homeManagerConfiguration {
     ../../nix
     ../../home-manager
     { home.homeDirectory = homeDirectory; }
-  ] ++ (import ../../home-manager/graphical.nix).linux;
+  ]
+  ++ (import ../../home-manager/graphical.nix).linux;
 }

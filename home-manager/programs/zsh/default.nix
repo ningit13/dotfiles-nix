@@ -5,7 +5,7 @@
     dotDir = "${config.xdg.configHome}/zsh";
     history.path = "${config.xdg.stateHome}/zsh/history";
 
-    initContent = lib.mkOrder 500''
+    initContent = lib.mkOrder 500 ''
       # Ignore insecure completion-dependent directories
       export ZSH_DISABLE_COMPFIX=true
     '';
