@@ -1,13 +1,13 @@
-{ config, ... }:
+{ config, lib, ... }:
 {
   programs.zsh = {
     enable = true;
     dotDir = "${config.xdg.configHome}/zsh";
     history.path = "${config.xdg.stateHome}/zsh/history";
 
-    initContent = ''
+    initContent = lib.mkOrder 500''
       # Ignore insecure completion-dependent directories
-      compaudit() { return 0; }
+      export ZSH_DISABLE_COMPFIX=true
     '';
 
     oh-my-zsh = {
