@@ -7,20 +7,8 @@
     viAlias = true;
     vimAlias = true;
 
-    colorschemes.tokyonight = {
-      enable = true;
-      settings = {
-        style = "night";
-      };
-    };
-
-    opts = {
-      number = true;
-    };
-
     imports = [
-      ./globals.nix
-      ./keymap.nix
+      ./common
       ./lsp.nix
       ./plugins.nix
     ];

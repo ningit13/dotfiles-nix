@@ -29,9 +29,9 @@
         pyright = {
           enable = true;
         };
-        rust_analyzer = {
-          enable = true;
-        };
+        # rust_analyzer = {
+        #   enable = true;
+        # };
         tombi = {
           enable = true;
         };
