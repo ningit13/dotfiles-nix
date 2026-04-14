@@ -6,5 +6,8 @@
     mini-surround = {
       enable = true;
     };
+    blink-cmp = {
+      enable = true;
+    };
   };
 }

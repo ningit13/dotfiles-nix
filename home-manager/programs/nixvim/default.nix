@@ -21,7 +21,8 @@
     imports = [
       ./globals.nix
       ./keymap.nix
-      ./plugins
+      ./lsp.nix
+      ./plugins.nix
     ];
   };
 }
