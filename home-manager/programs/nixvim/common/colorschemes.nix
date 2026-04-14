@@ -3,6 +3,7 @@
     enable = true;
     settings = {
       style = "night";
+      transparent = true;
     };
   };
 }
