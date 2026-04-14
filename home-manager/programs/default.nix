@@ -11,6 +11,7 @@
     ./python
     ./ripgrep
     ./tmux
+    ./yazi
     ./zsh
   ];
 }

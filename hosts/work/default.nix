@@ -24,7 +24,11 @@ home-manager.lib.homeManagerConfiguration {
     nixvim.homeModules.nixvim
     ../../nix
     ../../home-manager/misc
-    ../../home-manager/programs/nixvim
+    ../../home-manager/programs/eza
+    ../../home-manager/programs/fd
+    ../../home-manager/programs/fzf
+    ../../home-manager/programs/ripgrep
+    ../../home-manager/programs/yazi
     ../../home-manager/services
     { home.homeDirectory = homeDirectory; }
   ];

@@ -26,3 +26,13 @@ If needed, add below extra option above commands.
 ```zsh
 --extra-experimental-features 'nix-command flakes'
 ```
+
+If use linux (not NixOS), add below settings and restart nix-daemon.
+- /etc/nix/nix.conf
+```conf
+trusted-users = root <username>
+```
+- restart nix-daemon
+```zsh
+sudo systemctl restart nix-daemon
+```

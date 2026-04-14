@@ -1,7 +1,6 @@
 {
-  programs.fzf = {
+  programs.yazi = {
     enable = true;
     enableZshIntegration = true;
-    tmux.enableShellIntegration = true;
   };
 }
