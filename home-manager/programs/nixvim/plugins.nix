@@ -7,14 +7,24 @@
     web-devicons = {
       enable = true;
     };
+
     mini-surround = {
       enable = true;
     };
+
     blink-cmp = {
       enable = true;
     };
+
     indent-blankline = {
       enable = true;
+    };
+
+    undotree = {
+      enable = true;
+      settings = {
+        WindowLayout = 3;
+      };
     };
   };
 }
