@@ -33,14 +33,8 @@
       # synchronize panes
       bind-key a set-window-option synchronize-panes
 
-      # extra key bidings
-      bind-key -n M-s if -F "#{==:#{prefix},C-f}" \
-          "set-option -g prefix C-a ; \
-          unbind-key C-f ; \
-          bind-key C-f send-prefix" \
-          "set-option -g prefix C-f ; \
-          unbind-key C-a ; \
-          bind-key C-a send-prefix"
+      # status line toggle
+      bind-key b set-option -g status
     '';
   };
 

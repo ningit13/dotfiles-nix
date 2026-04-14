@@ -42,8 +42,8 @@
 
 	# Uncomment these if you want to enable tmux bindings for muting (hiding) one of the status bars.
 	# E.g. this example binding would mute the left status bar when pressing <prefix> followed by Ctrl-[
-	export TMUX_POWERLINE_MUTE_LEFT_KEYBINDING="C-m"
-	export TMUX_POWERLINE_MUTE_RIGHT_KEYBINDING="C-m"
+	# export TMUX_POWERLINE_MUTE_LEFT_KEYBINDING="C-["
+	# export TMUX_POWERLINE_MUTE_RIGHT_KEYBINDING="C-]"
 # }
 
 # air.sh {

@@ -1,22 +1,35 @@
 {
   plugins = {
-    neo-tree = {
+    blink-cmp = {
       enable = true;
     };
-    # required for neo-tree (optional)
-    web-devicons = {
+
+    indent-blankline = {
       enable = true;
+      settings = {
+        indent = {
+          char = "";
+          highlight = ["CursorColumn" "Whitespace"];
+        };
+        whitespace = {
+          remove_blankline_trail = false;
+          highlight = ["CursorColumn" "Whitespace"];
+        };
+        scope = {
+          enabled = false;
+        };
+      };
     };
 
     mini-surround = {
       enable = true;
     };
 
-    blink-cmp = {
+    neo-tree = {
       enable = true;
     };
-
-    indent-blankline = {
+    # required for neo-tree (optional)
+    web-devicons = {
       enable = true;
     };
 
