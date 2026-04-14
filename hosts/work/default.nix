@@ -29,7 +29,15 @@ home-manager.lib.homeManagerConfiguration {
     ../../home-manager/programs/fzf
     ../../home-manager/programs/ripgrep
     ../../home-manager/programs/yazi
+    ../../home-manager/programs/zsh
     ../../home-manager/services
-    { home.homeDirectory = homeDirectory; }
+    {
+      home.homeDirectory = homeDirectory;
+      programs.zsh.initContent = pkgs.lib.mkOrder 1500 ''
+        # Set up proxy
+        source ~/setup-files/.set_proxy.sh
+        alias swp="source ~/setup-files/switch_proxy.sh"
+      '';
+    }
   ];
 }
