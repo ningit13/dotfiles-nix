@@ -16,6 +16,7 @@ let
     inherit system;
     config.allowUnfree = true;
     overlays = [
+      inputs.neovim-nightly-overlay.overlays.default
       inputs.brew-nix.overlays.default
     ];
   };
@@ -34,7 +35,6 @@ nix-darwin.lib.darwinSystem {
     home-manager.darwinModules.home-manager
     {
       home-manager = {
-        #useGlobalPkgs = true;
         useUserPackages = false;
 
         users.${username} = {
@@ -46,14 +46,9 @@ nix-darwin.lib.darwinSystem {
         sharedModules = [
           mac-app-util.homeManagerModules.default
           nixvim.homeModules.nixvim
-          {
-            nixpkgs.overlays = [
-              inputs.neovim-nightly-overlay.overlays.default
-            ];
-          }
         ];
         extraSpecialArgs = {
-          inherit profile;
+          inherit profile pkgs;
         };
       };
     }
