@@ -32,9 +32,6 @@
 
       # synchronize panes
       bind-key a set-window-option synchronize-panes
-
-      # status line toggle
-      bind-key b set-option -g status
     '';
   };
 
