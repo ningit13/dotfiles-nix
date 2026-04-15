@@ -11,5 +11,6 @@
   mac = [
     ./alacritty
     ./alacritty-theme
+    ./vscode
   ];
 }
