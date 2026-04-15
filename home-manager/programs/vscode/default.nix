@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.vscode = {
     enable = true;
@@ -6,6 +7,7 @@
       ms-vscode.remote-ssh
       ms-vscode.remote-ssh-edit
       editorconfig.editorconfig
+      jnoortheen.nix-ide
     ];
   };
 }

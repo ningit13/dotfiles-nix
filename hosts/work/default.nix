@@ -24,6 +24,7 @@ home-manager.lib.homeManagerConfiguration {
     nixvim.homeModules.nixvim
     ../../nix
     ../../home-manager/misc
+    ../../home-manager/programs/direnv
     ../../home-manager/programs/eza
     ../../home-manager/programs/fd
     ../../home-manager/programs/fzf
