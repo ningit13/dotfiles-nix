@@ -46,4 +46,20 @@
       };
     };
   };
+
+  userCommands = {
+    UndotreeToggleAndFocus = {
+      command = ":UndotreeToggle | :UndotreeFocus";
+      desc = "Toggle and focus Undotree";
+    };
+  };
+
+  keymaps = [
+    # undotree
+    {
+      mode = "n";
+      key = "<leader>u";
+      action = "<cmd>UndotreeToggleAndFocus<CR>";
+    }
+  ];
 }
