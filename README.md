@@ -22,6 +22,9 @@ sudo nix run nix-darwin -- switch --flake .#<host> --show-trace
 ```
 
 ### Appendix
+```zsh
+direnv allow
+```
 If needed, add below extra option above commands.
 ```zsh
 --extra-experimental-features 'nix-command flakes'
