@@ -8,6 +8,8 @@
       ms-vscode.remote-ssh-edit
       editorconfig.editorconfig
       jnoortheen.nix-ide
+      ms-vscode-remote.remote-containers
+      ms-azuretools.vscode-containers
     ];
   };
 }
