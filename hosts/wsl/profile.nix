@@ -4,5 +4,5 @@ rec {
   system = "x86_64-linux";
 
   gitUserName = "ningit";
-  gitUserEmail = "khf.13.14.zz@gmail.com";
+  gitUserEmail = "ningit13@pm.me";
 }
