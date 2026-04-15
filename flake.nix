@@ -16,6 +16,10 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    git-hooks-nix = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     brew-nix = {
       url = "github:BatteredBunny/brew-nix";
       inputs.brew-api.follows = "brew-api";
@@ -40,6 +44,7 @@
     {
       flake-parts,
       treefmt-nix,
+      git-hooks-nix,
       ...
     }@inputs:
 
@@ -52,6 +57,7 @@
 
       imports = [
         treefmt-nix.flakeModule
+        git-hooks-nix.flakeModule
       ];
 
       flake = {
@@ -68,6 +74,7 @@
 
       perSystem =
         {
+          config,
           pkgs,
           ...
         }:
@@ -83,6 +90,16 @@
             packages = with pkgs; [
               nil
             ];
+            shellHook = config.pre-commit.installationScript;
+          };
+
+          pre-commit = {
+            check.enable = true;
+            settings.hooks = {
+              treefmt = {
+                enable = true;
+              };
+            };
           };
         };
     };
