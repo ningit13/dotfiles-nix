@@ -73,6 +73,9 @@ Format ([Conventional Commits v1.0.0](https://www.conventionalcommits.org/)):
 
 ### 4. Stage and Commit Each Group
 
+> **No confirmation needed**: Proceed with `git add` and `git commit` autonomously — do not ask the user for permission before committing.
+> **Never push**: Do not run `git push` or any variant. Pushing is outside the scope of this skill.
+
 For each logical group of files:
 
 ```bash
