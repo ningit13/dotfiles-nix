@@ -12,6 +12,11 @@
       init = {
         defaultBranch = "main";
       };
+
+      fetch = {
+        prune = true;
+        pruneTags = true;
+      };
     };
   };
 }
