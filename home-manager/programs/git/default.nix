@@ -3,6 +3,12 @@
   programs.git = {
     enable = true;
 
+    signing = {
+      format = "ssh";
+      key = profile.gitSigningKey;
+      signByDefault = true;
+    };
+
     settings = {
       user = {
         name = profile.gitUserName;

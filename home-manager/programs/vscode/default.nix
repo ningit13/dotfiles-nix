@@ -12,6 +12,7 @@
       ms-azuretools.vscode-containers
       ms-vscode.remote-server
       Anthropic.claude-code
+      github.vscode-github-actions
     ];
   };
 }

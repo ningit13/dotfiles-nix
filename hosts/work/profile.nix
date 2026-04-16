@@ -5,4 +5,5 @@ rec {
 
   gitUserName = "";
   gitUserEmail = "";
+  gitSigningKey = "";
 }
