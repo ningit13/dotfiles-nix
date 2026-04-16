@@ -1,6 +1,9 @@
 {
   imports = [
-    ./lsp.nix
-    ./plugins.nix
+    ./indent-blanklines
+    ./lazygit
+    ./mini
+    ./neo-tree
+    ./undotree
   ];
 }

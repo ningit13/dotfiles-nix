@@ -9,6 +9,7 @@
 
     imports = [
       ./common
+      ./lsp
       ./plugins
     ];
   };
