@@ -2,6 +2,10 @@
 
 NixOS/nix-darwin dotfiles managed via Nix flakes.
 
+## Prerequisites
+
+[Nix](https://nixos.org/download/) must be installed on your system before using this repository.
+
 ## Hosts
 
 | Host | Platform | Manager |
