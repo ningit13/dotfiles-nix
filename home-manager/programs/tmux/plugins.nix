@@ -70,7 +70,7 @@ with pkgs.tmuxPlugins;
       set -g @tmux_window_dir_programs "['nvim', 'vim', 'vi', 'git']"
       set -g @tmux_window_name_max_name_len "20"
       set -g @tmux_window_name_use_tilde "True"
-      set -g @tmux_window_name_icon_style "'name_and_icon'"
+      set -g @tmux_window_name_icon_style "'icon'"
       set -g @tmux_window_name_custom_icons '{"vim": "", "nvim": "", "python3": ""}'
     '';
   }
