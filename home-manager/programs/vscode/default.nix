@@ -3,7 +3,7 @@
   programs.vscode = {
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
-      ms-vscode-remote.remote-explorer
+      ms-vscode.remote-explorer
       ms-vscode-remote.remote-ssh
       ms-vscode-remote.remote-ssh-edit
       ms-vscode-remote.remote-server
