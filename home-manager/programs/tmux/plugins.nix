@@ -13,7 +13,7 @@ let
       owner = "erikw";
       repo = "tmux-powerline";
       rev = "6079ace8d534a01d4d964b8b854b223f72edaf4b";
-      hash = "sha256-0ibtd1gTyr8hJDBsAfmgH3qr0zC0o2Fn0tjN/S+zxgA=";
+      hash = "sha256-GZVMxp+2y+BuxUKM8hP8OxVZlzYInlKC8D8Pwch1Ojg=";
     };
   };
   treemux = tmuxPlugins.mkTmuxPlugin {
