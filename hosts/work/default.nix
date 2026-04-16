@@ -32,6 +32,7 @@ home-manager.lib.homeManagerConfiguration {
     ../../home-manager/programs/nixvim
     ../../home-manager/programs/ripgrep
     ../../home-manager/programs/yazi
+    ../../home-manager/programs/zoxide
     ../../home-manager/programs/zsh
     ../../home-manager/services
     {

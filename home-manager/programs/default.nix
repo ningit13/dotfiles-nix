@@ -13,6 +13,7 @@
     ./ripgrep
     ./tmux
     ./yazi
+    ./zoxide
     ./zsh
   ];
 }
