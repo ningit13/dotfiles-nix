@@ -15,7 +15,7 @@ jobs:
   build:
     strategy:
       matrix:
-        host: [linux, linux-server, wsl, work]
+        host: [linux, linux-server, wsl]
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:

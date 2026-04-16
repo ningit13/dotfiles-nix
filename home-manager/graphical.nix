@@ -1,8 +1,8 @@
 {
   linux = [
     ./fonts
-    (import ./programs/graphical.nix).linux
-  ];
+  ]
+  ++ (import ./programs/graphical.nix).linux;
 
   mac = (import ./programs/graphical.nix).mac;
 }
