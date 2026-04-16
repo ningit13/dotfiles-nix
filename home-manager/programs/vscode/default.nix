@@ -6,7 +6,6 @@
       ms-vscode.remote-explorer
       ms-vscode-remote.remote-ssh
       ms-vscode-remote.remote-ssh-edit
-      ms-vscode-remote.remote-server
       ms-vscode-remote.remote-containers
       ms-azuretools.vscode-containers
       editorconfig.editorconfig
