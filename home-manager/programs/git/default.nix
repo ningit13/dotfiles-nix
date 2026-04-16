@@ -9,6 +9,14 @@
         email = profile.gitUserEmail;
       };
 
+      alias = {
+        ch = "checkout";
+        cm = "commit";
+        st = "status";
+        br = "branch";
+        sw = "switch";
+      };
+
       init = {
         defaultBranch = "main";
       };
