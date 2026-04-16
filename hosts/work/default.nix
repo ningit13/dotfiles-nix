@@ -8,9 +8,6 @@ let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
-    overlays = [
-      inputs.neovim-nightly-overlay.overlays.default
-    ];
   };
 
 in

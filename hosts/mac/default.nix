@@ -16,7 +16,6 @@ let
     inherit system;
     config.allowUnfree = true;
     overlays = [
-      inputs.neovim-nightly-overlay.overlays.default
       inputs.brew-nix.overlays.default
     ];
   };
