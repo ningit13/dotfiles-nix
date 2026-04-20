@@ -24,6 +24,9 @@
       bind-key C-j swap-pane -D        # swap pane to Down
       bind-key C-k swap-pane -U        # swap pane to Up
 
+      bind-key C-[ switch-client -p    # switch to previous session
+      bind-key C-] switch-client -n    # switch to next session
+
       # reload config file with prefix + r
       bind-key r source-file $XDG_CONFIG_HOME/tmux/tmux.conf \; display-message "Config reloaded!"
 
@@ -32,8 +35,16 @@
 
       # synchronize panes
       bind-key a set-window-option synchronize-panes
+
+      set -g status-right-length 80
+      set -g status-left-length 80
+      set -g status-style "bg=colour235,fg=white"
+
+      # set window status
+      set -g status-justify centre
+      set -g window-status-current-style reverse
+      set -g window-status-format "#I:#W"
+      set -g window-status-current-format "#I:#W"
     '';
   };
-
-  xdg.configFile.tmux-powerline.source = ./config/tmux-powerline;
 }
