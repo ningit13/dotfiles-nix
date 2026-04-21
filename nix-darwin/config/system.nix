@@ -6,10 +6,15 @@
 
     defaults = {
       SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
+      universalaccess = {
+        reduceMotion = true;
+        reduceTransparency = true;
+      };
 
       NSGlobalDomain = {
         AppleInterfaceStyle = "Dark";
         AppleInterfaceStyleSwitchesAutomatically = false;
+        AppleShowAllExtensions = true;
         "com.apple.swipescrolldirection" = false;
       };
 
@@ -18,6 +23,9 @@
         autohide = true;
         show-recents = false;
         orientation = "bottom";
+        mineffect = "scale";
+        minimize-to-application = true;
+        tilesize = 32;
       };
     };
   };
