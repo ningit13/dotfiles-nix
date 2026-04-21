@@ -25,9 +25,11 @@ home-manager.lib.homeManagerConfiguration {
     ../../home-manager/programs/eza
     ../../home-manager/programs/fd
     ../../home-manager/programs/fzf
+    ../../home-manager/programs/jq
     ../../home-manager/programs/lazygit
-    ../../home-manager/programs/nixvim
+    ../../home-manager/programs/python
     ../../home-manager/programs/ripgrep
+    ../../home-manager/programs/tmux
     ../../home-manager/programs/yazi
     ../../home-manager/programs/zoxide
     ../../home-manager/programs/zsh
