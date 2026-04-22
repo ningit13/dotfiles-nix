@@ -35,7 +35,7 @@ let
       owner = "ofirgall";
       repo = "tmux-window-name";
       rev = "master";
-      sha256 = "sha256-/ImZy4VijniRtWxrf89XRdKK+bpAOttP4ZtgPNoSrHI=";
+      sha256 = "sha256-YI2s/OtywKJQAPpb07dCbWA/6+sWAl+DB+QQbvZOG5k=";
     };
   };
   session-dots = tmuxPlugins.mkTmuxPlugin {
@@ -56,7 +56,7 @@ with pkgs.tmuxPlugins;
   {
     plugin = sensible;
     extraConfig = ''
-      set -g status-left "#h | #{tmux_mode_indicator}"
+      set -g status-left "#h [#S] #{tmux_mode_indicator}"
       set -g status-right "#{session_dots} \
                            #[fg=colour251] Mem:#{ram}  Load:#{load_average} \
                            #[fg=colour172] %H:%M  %Y/%m/%d  %a  󰨳 %U"
