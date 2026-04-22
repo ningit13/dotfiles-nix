@@ -1,4 +1,4 @@
-{ profile }:
+{ profile, ... }:
 {
   system = {
     stateVersion = 6;
