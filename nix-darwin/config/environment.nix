@@ -6,5 +6,7 @@
     brewCasks.visual-studio-code
     brewCasks.rectangle
     brewCasks.obsidian
+    brewCasks.claude
+    brewCasks.proton-mail
   ];
 }
