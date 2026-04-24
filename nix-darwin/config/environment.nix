@@ -8,5 +8,6 @@
     brewCasks.obsidian
     brewCasks.claude
     brewCasks.proton-mail
+    brewCasks.slack
   ];
 }
