@@ -25,7 +25,7 @@
         orientation = "bottom";
         mineffect = "scale";
         minimize-to-application = true;
-        tilesize = 32;
+        tilesize = 40;
       };
     };
   };
