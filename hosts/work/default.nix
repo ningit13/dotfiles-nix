@@ -15,6 +15,7 @@ home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
   extraSpecialArgs = {
     inherit profile;
+    enableDE = false;
   };
 
   modules = [

@@ -2,7 +2,7 @@
 let
   inherit (inputs) nixpkgs home-manager nixvim;
 
-  profile = import ../profile.nix;
+  profile = import ./profile.nix;
   inherit (profile) system homeDirectory;
 
   pkgs = import nixpkgs {
@@ -15,6 +15,7 @@ home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
   extraSpecialArgs = {
     inherit profile;
+    enableDE = false;
   };
 
   modules = [

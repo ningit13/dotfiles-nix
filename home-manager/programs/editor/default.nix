@@ -1,13 +1,9 @@
 { lib, enableDE, ... }:
 {
   imports = [
-    ./editor
-    ./lang
-    ./terminal
-    ./tools
+    ./nixvim
   ]
   ++ lib.optionals enableDE [
-    ./apps
-    ./browser
+    ./vscode
   ];
 }

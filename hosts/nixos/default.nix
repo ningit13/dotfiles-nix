@@ -2,43 +2,35 @@
 let
   inherit (inputs)
     nixpkgs
-    nix-darwin
     home-manager
     nixvim
-    brew-nix
-    mac-app-util
     ;
 
-  profile = import ./profile.nix;
+  profile = import ../profile.nix;
   inherit (profile) system username;
 
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
-    overlays = [
-      inputs.brew-nix.overlays.default
-    ];
   };
 
 in
-nix-darwin.lib.darwinSystem {
+nixpkgs.lib.nixosSystem {
   inherit pkgs;
   specialArgs = {
     inherit profile;
   };
 
   modules = [
-    ../../nix-darwin
-    brew-nix.darwinModules.default
-    mac-app-util.darwinModules.default
-    home-manager.darwinModules.home-manager
+    ../../nixos
+    nixvim.nixosModules.nixvim
+    home-manager.nixosModules.home-manager
     {
       home-manager = {
         useUserPackages = false;
 
         users.${username} = import ../../home-manager;
         sharedModules = [
-          mac-app-util.homeManagerModules.default
           nixvim.homeModules.nixvim
         ];
         extraSpecialArgs = {

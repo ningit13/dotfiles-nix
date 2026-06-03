@@ -4,5 +4,6 @@
     ./misc
     ./programs
     ./services
+    ./fonts
   ];
 }

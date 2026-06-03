@@ -1,13 +1,11 @@
 { lib, enableDE, ... }:
 {
   imports = [
-    ./editor
-    ./lang
-    ./terminal
-    ./tools
+    ./tmux
+    ./zsh
   ]
   ++ lib.optionals enableDE [
-    ./apps
-    ./browser
+    ./alacritty
+    ./alacritty-theme
   ];
 }
