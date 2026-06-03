@@ -1,4 +1,9 @@
-{ lib, enableDE, ... }:
+{
+  pkgs,
+  lib,
+  enableDE,
+  ...
+}:
 {
   imports = [
     ./editor
@@ -6,7 +11,7 @@
     ./terminal
     ./tools
   ]
-  ++ lib.optionals enableDE [
+  ++ lib.optionals (enableDE && pkgs.stdenv.isLinux) [
     ./apps
     ./browser
   ];
