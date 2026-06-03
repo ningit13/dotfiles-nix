@@ -27,9 +27,6 @@ jobs:
       - name: Build NixOS configuration
         run: nix build --show-trace --no-link .#nixosConfigurations.nixos.config.system.build.toplevel
   build:
-    strategy:
-      matrix:
-        host: [wsl, work, linux-server]
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
@@ -42,7 +39,7 @@ jobs:
         with:
           cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - name: Build home-manager configuration
-        run: nix build --show-trace --no-link .#homeConfigurations.${{ matrix.host }}.activationPackage
+        run: nix build --show-trace --no-link .#homeConfigurations.wsl.activationPackage
   build-mac:
     runs-on: macos-latest
     timeout-minutes: 120
