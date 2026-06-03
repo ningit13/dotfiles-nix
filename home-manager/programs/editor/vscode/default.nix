@@ -8,10 +8,18 @@ let
       sha256 = "sha256-CxJ9NJXqHAa9n0pFJERZQhSIggqa4Wc63Yg+0NGedCU=";
     };
   };
+  # macOS: VSCode is managed by Homebrew; wrap the Homebrew binary to avoid
+  # building pkgs.vscode from nixpkgs (fails due to 7-Zip symlink extraction).
+  vscodePkg =
+    if pkgs.stdenv.isDarwin then
+      pkgs.writeShellScriptBin "code" ''exec /opt/homebrew/bin/code "$@"''
+    else
+      pkgs.vscode;
 in
 {
   programs.vscode = {
     enable = true;
+    package = vscodePkg;
     profiles.default = {
       extensions =
         (with pkgs.vscode-extensions; [
