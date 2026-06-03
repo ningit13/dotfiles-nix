@@ -10,15 +10,21 @@ NixOS/nix-darwin dotfiles managed via Nix flakes.
 
 | Host | Platform | Manager |
 |------|----------|---------|
-| `linux` | Linux (non-NixOS) | home-manager |
-| `linux-server` | Linux server | home-manager |
+| `nixos` | NixOS | nixos-rebuild |
+| `linux-server` | Linux server (non-NixOS) | home-manager |
 | `wsl` | WSL2 | home-manager |
-| `work` | Linux (work machine) | home-manager |
+| `work` | Linux work machine (non-NixOS) | home-manager |
 | `mac` | macOS | nix-darwin + home-manager |
 
 ## Usage
 
 ### Apply configuration
+
+**NixOS** — rebuild the system configuration:
+
+```zsh
+sudo nixos-rebuild switch --flake .#nixos --show-trace
+```
 
 **Linux / WSL** — apply home-manager configuration for the given host:
 
