@@ -6,6 +6,12 @@ NixOS/nix-darwin dotfiles managed via Nix flakes.
 
 [Nix](https://nixos.org/download/) must be installed on your system before using this repository.
 
+**macOS only:** [Homebrew](https://brew.sh/) must also be installed before applying the `mac` configuration, as nix-darwin uses it to manage GUI applications (casks).
+
+```zsh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 ## Hosts
 
 | Host | Platform | Manager |
