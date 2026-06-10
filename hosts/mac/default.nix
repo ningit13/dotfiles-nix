@@ -6,7 +6,6 @@ let
     home-manager
     nixvim
     nix4vscode
-    brew-nix
     mac-app-util
     ;
 
@@ -17,7 +16,6 @@ let
     inherit system;
     config.allowUnfree = true;
     overlays = [
-      brew-nix.overlays.default
       nix4vscode.overlays.default
     ];
   };
@@ -31,7 +29,6 @@ nix-darwin.lib.darwinSystem {
 
   modules = [
     ../../nix-darwin
-    brew-nix.darwinModules.default
     mac-app-util.darwinModules.default
     home-manager.darwinModules.home-manager
     {

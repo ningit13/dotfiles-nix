@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-darwin = {
-      url = "github:LnL7/nix-darwin";
+      url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -19,14 +19,6 @@
     git-hooks-nix = {
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    brew-nix = {
-      url = "github:BatteredBunny/brew-nix";
-      inputs.brew-api.follows = "brew-api";
-    };
-    brew-api = {
-      url = "github:BatteredBunny/brew-api";
-      flake = false;
     };
     mac-app-util.url = "github:hraban/mac-app-util";
 

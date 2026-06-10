@@ -7,8 +7,8 @@ in
 
   imports = [
     ../nix
-    ./config/environment.nix
     ./config/fonts.nix
+    ./config/homebrew.nix
     ./config/programs.nix
     ./config/system.nix
   ];
