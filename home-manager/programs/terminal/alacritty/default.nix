@@ -1,4 +1,8 @@
+{ pkgs, ... }:
 {
+  # use alacritty-theme to set the theme for alacritty.
+  home.packages = with pkgs; [ alacritty-theme ];
+
   programs.alacritty = {
     enable = true;
     theme = "github_dark_colorblind";

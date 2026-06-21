@@ -21,7 +21,7 @@ home-manager.lib.homeManagerConfiguration {
     nixvim.homeModules.nixvim
     ../../nix
     ../../home-manager
+    ../../home-manager/desktop.nix
     { home.homeDirectory = homeDirectory; }
-  ]
-  ++ (import ../../home-manager/graphical.nix).linux;
+  ];
 }

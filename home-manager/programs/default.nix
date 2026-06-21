@@ -1,19 +1,8 @@
 {
   imports = [
-    ./claude-code
-    ./direnv
-    ./eza
-    ./fd
-    ./fzf
-    ./git
-    ./jq
-    ./lazygit
-    ./nixvim
-    ./python
-    ./ripgrep
-    ./tmux
-    ./yazi
-    ./zoxide
-    ./zsh
+    ./cli-tools
+    ./editor
+    ./lang
+    ./terminal
   ];
 }
