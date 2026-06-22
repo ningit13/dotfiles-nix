@@ -21,20 +21,20 @@ home-manager.lib.homeManagerConfiguration {
     nixvim.homeModules.nixvim
     ../../nix
     ../../home-manager/misc
-    ../../home-manager/programs/claude-code
+    ../../home-manager/programs/cli-tools/claude-code
+    ../../home-manager/programs/cli-tools/direnv
+    ../../home-manager/programs/cli-tools/eza
+    ../../home-manager/programs/cli-tools/fd
+    ../../home-manager/programs/cli-tools/fzf
+    ../../home-manager/programs/cli-tools/jq
+    ../../home-manager/programs/cli-tools/lazygit
+    ../../home-manager/programs/cli-tools/ripgrep
+    ../../home-manager/programs/cli-tools/yazi
+    ../../home-manager/programs/cli-tools/zoxide
     ../../home-manager/programs/cloud
-    ../../home-manager/programs/direnv
-    ../../home-manager/programs/eza
-    ../../home-manager/programs/fd
-    ../../home-manager/programs/fzf
-    ../../home-manager/programs/jq
-    ../../home-manager/programs/lazygit
-    ../../home-manager/programs/python
-    ../../home-manager/programs/ripgrep
-    ../../home-manager/programs/tmux
-    ../../home-manager/programs/yazi
-    ../../home-manager/programs/zoxide
-    ../../home-manager/programs/zsh
+    ../../home-manager/programs/lang/python
+    ../../home-manager/programs/terminal/tmux
+    ../../home-manager/programs/terminal/zsh
     ../../home-manager/services
     {
       home.homeDirectory = homeDirectory;
