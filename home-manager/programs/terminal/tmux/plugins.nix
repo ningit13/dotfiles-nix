@@ -56,7 +56,7 @@ with pkgs.tmuxPlugins;
   {
     plugin = sensible;
     extraConfig = ''
-      set -g status-left "#h [#S] #{tmux_mode_indicator}"
+      set -g status-left "#h #[fg=colour187][#S] #{tmux_mode_indicator}"
       set -g status-right "#{session_dots} \
                            #[fg=colour251] Mem:#{ram}  Load:#{load_average} \
                            #[fg=colour172] %H:%M  %Y/%m/%d  %a  󰨳 %U"
