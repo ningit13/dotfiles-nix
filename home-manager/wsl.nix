@@ -1,6 +1,5 @@
-{ ... }:
 {
   imports = [
-    ./services/wsl.nix
+    ./services/wsl2-ssh-agent
   ];
 }
