@@ -2,7 +2,7 @@
 let
   inherit (inputs) nixpkgs home-manager nixvim;
 
-  profile = import ../profile.nix;
+  profile = import ./profile.nix;
   inherit (profile) system homeDirectory;
 
   pkgs = import nixpkgs {
