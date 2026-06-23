@@ -46,8 +46,9 @@
       set -g window-status-format "#I:#W"
       set -g window-status-current-format "#I:#W"
 
-      # set window active style
-      set -g window-active-style "bg=colour234"
+      # set window style
+      set -g window-style "bg=default,fg=colour242"
+      set -g window-active-style "bg=default,fg=colour250"
     '';
   };
 }
