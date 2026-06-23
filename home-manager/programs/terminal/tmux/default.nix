@@ -45,6 +45,9 @@
       set -g window-status-current-style reverse
       set -g window-status-format "#I:#W"
       set -g window-status-current-format "#I:#W"
+
+      # set window active style
+      set -g window-active-style "bg=colour234"
     '';
   };
 }
