@@ -53,9 +53,8 @@
       ];
 
       flake = {
-        darwinConfigurations = {
-          mac = import ./hosts/mac { inherit inputs; };
-        };
+        darwinConfigurations.mac = import ./hosts/mac { inherit inputs; };
+        nixosConfigurations.nixos = import ./hosts/nixos { inherit inputs; };
         homeConfigurations = {
           linux-server = import ./hosts/linux-server { inherit inputs; };
           wsl = import ./hosts/wsl { inherit inputs; };
