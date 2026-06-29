@@ -13,13 +13,14 @@ let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
+    config.allowInsecurePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [ "electron" ];
     overlays = [
       nix4vscode.overlays.default
     ];
   };
 
 in
-pkgs.lib.nixosSystem {
+nixpkgs.lib.nixosSystem {
   inherit pkgs;
   specialArgs = {
     inherit profile;
