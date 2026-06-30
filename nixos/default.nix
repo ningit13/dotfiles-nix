@@ -1,6 +1,7 @@
 {
   imports = [
     ./config/boot.nix
+    ./config/console.nix
     ./config/fonts.nix
     ./config/i18n.nix
     ./config/networking.nix

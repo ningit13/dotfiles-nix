@@ -2,6 +2,12 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  # Configure keymap in X11 (wayland).
+  services.xserver.xkb = {
+    layout = "jp";
+    variant = "";
+  };
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
