@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repo Is
 
-NixOS/nix-darwin dotfiles managed via Nix flakes. Supports multiple host profiles: `linux-server`, `wsl`, `work` (Linux variants via home-manager) and `mac` (nix-darwin + home-manager).
+NixOS/nix-darwin dotfiles managed via Nix flakes. Supports multiple host profiles: `linux-server`, `wsl`, `work` (Linux variants via home-manager), `mac` (nix-darwin + home-manager), and `nixos` (full NixOS with embedded home-manager).
 
 ## Commands
 
@@ -14,11 +14,14 @@ NixOS/nix-darwin dotfiles managed via Nix flakes. Supports multiple host profile
 # Linux / WSL (home-manager)
 nix run nixpkgs#home-manager -- switch --flake .#<host> --show-trace
 
+# NixOS
+sudo nixos-rebuild switch --flake .#<host> --show-trace
+
 # macOS (nix-darwin)
 sudo nix run nix-darwin -- switch --flake .#<host> --show-trace
 ```
 
-Hosts: `linux-server`, `wsl`, `work`, `mac`
+Hosts: `linux-server`, `wsl`, `work`, `nixos`, `mac`
 
 ### Format
 
@@ -37,12 +40,13 @@ nix flake update --show-trace
 ## Architecture
 
 ```
-flake.nix                              # Entry point; defines darwinConfigurations + homeConfigurations
+flake.nix                              # Entry point; defines darwinConfigurations + nixosConfigurations + homeConfigurations
 hosts/
   profile.nix                          # Shared user identity defaults
   <host>/
     default.nix                        # Assembles the full configuration for that host
     profile.nix                        # Host-specific overrides: username, homeDirectory, system arch, git credentials
+    hardware-configuration.nix         # (nixos only) hardware scan output
 home-manager/
   default.nix                          # Imports misc/, programs/, services/
   desktop.nix                          # Desktop-only additions (fonts, graphical programs)
@@ -66,6 +70,15 @@ home-manager/
   services/                            # systemd and WSL2 services
 nix/config/                            # Shared nix daemon settings (gc, flakes, trusted-users)
 nix-darwin/config/                     # macOS-only system config (brew casks, dock, fonts)
+nixos/
+  default.nix                          # Imports all NixOS config modules
+  config/
+    boot.nix                           # Bootloader settings
+    configuration.nix                  # Core system config (networking, locale, desktop, sound)
+    fonts.nix                          # System-wide font packages
+    nix.nix                            # Nix daemon settings for NixOS
+    system.nix                         # stateVersion and other system-level options
+    users.nix                          # User accounts and groups
 ```
 
 ### Key conventions
@@ -75,4 +88,6 @@ nix-darwin/config/                     # macOS-only system config (brew casks, d
 - Programs are organized into category subdirectories under `home-manager/programs/`; each category has a `default.nix` and optionally a `desktop.nix` for graphical-only entries.
 - nixvim is configured via the `nixvim` flake input and lives in `home-manager/programs/editor/nixvim/`.
 - `nix-darwin` configs live separately from `home-manager` configs; the mac host wires them together in `hosts/mac/default.nix`.
+- The `nixos` host uses `nixosSystem` and embeds home-manager via `home-manager.nixosModules.home-manager`, so no separate `home-manager switch` is needed — `nixos-rebuild` applies both.
+- NixOS system-level modules live in `nixos/config/`; host-specific hardware config is in `hosts/nixos/hardware-configuration.nix`.
 - Formatting is enforced by `treefmt-nix` using `nixfmt`.
