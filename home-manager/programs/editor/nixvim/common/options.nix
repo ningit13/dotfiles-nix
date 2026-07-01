@@ -9,7 +9,13 @@
     undofile = true;
     undolevels = 10000;
 
-    list = true;
-    listchars = "space:·";
+    # Use system clipboard for all yank/paste operations
+    clipboard = "unnamedplus";
+
+    # Allow l to move to the next line at end of line
+    whichwrap = "b,s,l,h,<,>,[,]";
+
+    # list = true;
+    # listchars = "space:·";
   };
 }
