@@ -5,6 +5,7 @@
     ./eza
     ./fd
     ./fzf
+    ./gh
     ./git
     ./jq
     ./lazygit
