@@ -19,22 +19,15 @@ home-manager.lib.homeManagerConfiguration {
 
   modules = [
     nixvim.homeModules.nixvim
-    ../../nix
+    ../../linux
     ../../home-manager/misc
-    ../../home-manager/programs/cli-tools/claude-code
-    ../../home-manager/programs/cli-tools/direnv
-    ../../home-manager/programs/cli-tools/eza
-    ../../home-manager/programs/cli-tools/fd
-    ../../home-manager/programs/cli-tools/fzf
-    ../../home-manager/programs/cli-tools/jq
-    ../../home-manager/programs/cli-tools/lazygit
-    ../../home-manager/programs/cli-tools/ripgrep
-    ../../home-manager/programs/cli-tools/yazi
-    ../../home-manager/programs/cli-tools/zoxide
+    ../../home-manager/programs/cli-tools
     ../../home-manager/programs/cloud
     ../../home-manager/programs/lang/python
     ../../home-manager/programs/terminal/tmux
     ../../home-manager/programs/terminal/zsh
+    ../../home-manager/programs/vcs/lazygit
+    ../../home-manager/programs/vcs/ydiff
     ../../home-manager/services
     {
       home.homeDirectory = homeDirectory;

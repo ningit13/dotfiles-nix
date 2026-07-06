@@ -4,5 +4,6 @@
     ./editor
     ./lang
     ./terminal
+    ./vcs
   ];
 }
