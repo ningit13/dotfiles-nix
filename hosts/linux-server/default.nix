@@ -19,7 +19,7 @@ home-manager.lib.homeManagerConfiguration {
 
   modules = [
     nixvim.homeModules.nixvim
-    ../../nix
+    ../../linux
     ../../home-manager
     { home.homeDirectory = homeDirectory; }
   ];
