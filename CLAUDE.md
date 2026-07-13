@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repo Is
 
-NixOS/nix-darwin dotfiles managed via Nix flakes. Supports multiple host profiles: `linux-server`, `wsl`, `work` (Linux variants via home-manager), `mac` (nix-darwin + home-manager), and `nixos` (full NixOS with embedded home-manager).
+NixOS/nix-darwin dotfiles managed via Nix flakes. Supports multiple host profiles: `linux-server`, `wsl` (Linux variants via home-manager), `mac` (nix-darwin + home-manager), and `nixos` (full NixOS with embedded home-manager).
 
 ## Commands
 
@@ -21,7 +21,7 @@ sudo nixos-rebuild switch --flake .#<host> --show-trace
 sudo nix run nix-darwin -- switch --flake .#<host> --show-trace
 ```
 
-Hosts: `linux-server`, `wsl`, `work`, `nixos`, `mac`
+Hosts: `linux-server`, `wsl`, `nixos`, `mac`
 
 ### Format
 

@@ -18,7 +18,6 @@ NixOS/nix-darwin dotfiles managed via Nix flakes.
 |------|----------|---------|
 | `linux-server` | Linux server | home-manager |
 | `wsl` | WSL2 | home-manager |
-| `work` | Linux (work machine) | home-manager |
 | `nixos` | NixOS desktop | NixOS + home-manager |
 | `mac` | macOS | nix-darwin + home-manager |
 

@@ -58,7 +58,6 @@
         homeConfigurations = {
           linux-server = import ./hosts/linux-server { inherit inputs; };
           wsl = import ./hosts/wsl { inherit inputs; };
-          work = import ./hosts/work { inherit inputs; };
         };
       };
 
