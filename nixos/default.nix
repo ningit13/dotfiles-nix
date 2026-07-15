@@ -6,9 +6,11 @@
     ./config/i18n.nix
     ./config/networking.nix
     ./config/nix.nix
+    ./config/security.nix
     ./config/services.nix
     ./config/system.nix
     ./config/time.nix
     ./config/users.nix
+    ./config/wm.nix
   ];
 }
