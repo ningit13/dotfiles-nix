@@ -12,5 +12,6 @@
     ./config/time.nix
     ./config/users.nix
     ./config/wm.nix
+    ./config/xdg.nix
   ];
 }
