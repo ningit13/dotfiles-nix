@@ -1,0 +1,75 @@
+// This flag is make niri ask the applications to omit their client-side decorations.
+prefer-no-csd
+
+spawn-at-startup "awww-daemon"
+
+input {
+  keyboard {
+    xkb {
+      layout "jp"
+    }
+  }
+}
+
+binds {
+  Mod+Shift+Slash { show-hotkey-overlay; }
+
+  // Terminal
+  Mod+Return { spawn "alacritty"; }
+  // Launchers
+  Mod+D { spawn "fuzzel"; }
+
+  Mod+V { spawn "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+  // Screen Lock
+  Mod+Alt+L { spawn "swaylock" "-f"; }
+
+  Mod+Q { close-window; }
+
+  // Vi-style Focus Navigation (hjkl)
+  Mod+H { focus-column-left; }
+  Mod+J { focus-window-down; }
+  Mod+K { focus-window-up; }
+  Mod+L { focus-column-right; }
+
+  // Vi-style Window Movement (Shift + hjkl)
+  Mod+Shift+H { move-column-left; }
+  Mod+Shift+J { move-window-down; }
+  Mod+Shift+K { move-window-up; }
+  Mod+Shift+L { move-column-right; }
+
+  // Vi-style Workspace Navigation (Ctrl + j/k)
+  Mod+Ctrl+K { focus-workspace-up; }
+  Mod+Ctrl+J { focus-workspace-down; }
+
+  // Vi-style Monitor Focus (Alt + hjkl)
+  Mod+Alt+H { focus-monitor-left; }
+  Mod+Alt+L { focus-monitor-right; }
+  Mod+Alt+K { focus-monitor-up; }
+  Mod+Alt+J { focus-monitor-down; }
+
+  Mod+1 { focus-workspace 1; }
+  Mod+2 { focus-workspace 2; }
+  Mod+3 { focus-workspace 3; }
+  Mod+Shift+1 { move-column-to-workspace 1; }
+  Mod+Shift+2 { move-column-to-workspace 2; }
+  Mod+Shift+3 { move-column-to-workspace 3; }
+
+  // Overview Mode
+  Mod+O { toggle-overview; }
+
+  // Mod+F { maximize-column; }
+  // Mod+Shift+F { fullscreen-window; }
+
+  // Volume Control
+  XF86AudioRaiseVolume { spawn "swayosd-client" "--output-volume" "raise"; }
+  XF86AudioLowerVolume { spawn "swayosd-client" "--output-volume" "lower"; }
+  XF86AudioMute { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
+
+  // Brightness Control
+  XF86MonBrightnessUp { spawn "swayosd-client" "--brightness" "raise"; }
+  XF86MonBrightnessDown { spawn "swayosd-client" "--brightness" "lower"; }
+
+  Print { screenshot; }
+
+  // Mod+Shift+E { quit; }
+}
