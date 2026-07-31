@@ -6,6 +6,7 @@
     ./kanshi
     ./mako
     ./niri
+    ./polkit
     ./swayidle
     ./swaylock
     ./swayosd
