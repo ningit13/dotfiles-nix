@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    networkmanagerapplet
     networkmanager_dmenu
   ];
 

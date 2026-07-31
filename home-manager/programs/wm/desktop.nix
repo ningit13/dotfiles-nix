@@ -5,6 +5,7 @@
     ./fuzzel
     ./kanshi
     ./mako
+    ./networkmanager_dmenu
     ./niri
     ./polkit
     ./swayidle
