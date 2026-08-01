@@ -1,0 +1,112 @@
+input {
+  keyboard {
+    xkb {
+      layout "jp"
+    }
+  }
+
+  touchpad {
+    tap
+    dwt   // disable while typing
+  }
+}
+
+layout {
+  gaps 8
+
+  focus-ring {
+    on
+    width 2
+  }
+}
+
+hotkey-overlay {
+  skip-at-startup
+}
+
+// This flag is make niri ask the applications to omit their client-side decorations.
+prefer-no-csd
+
+spawn-at-startup "awww-daemon"
+
+binds {
+  Mod+Shift+Slash { show-hotkey-overlay; }
+
+  // Terminal, Launcher, Screen lock
+  Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+  Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+  Mod+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+
+  // Open cliphist, using fuzzel
+  Mod+V { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+
+  // Volume Control
+  XF86AudioRaiseVolume { spawn "swayosd-client" "--output-volume" "raise"; }
+  XF86AudioLowerVolume { spawn "swayosd-client" "--output-volume" "lower"; }
+  XF86AudioMute { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
+
+  // Brightness Control
+  XF86MonBrightnessUp { spawn "swayosd-client" "--brightness" "raise"; }
+  XF86MonBrightnessDown { spawn "swayosd-client" "--brightness" "lower"; }
+
+  // Open/close the Overview
+  Mod+O { toggle-overview; }
+
+  Mod+Q { close-window; }
+
+  // Vi-style Focus Navigation (hjkl)
+  Mod+H { focus-column-left; }
+  Mod+J { focus-window-down; }
+  Mod+K { focus-window-up; }
+  Mod+L { focus-column-right; }
+
+  // Vi-style Window Movement (Ctrl + hjkl)
+  Mod+Ctrl+H { move-column-left; }
+  Mod+Ctrl+J { move-window-down; }
+  Mod+Ctrl+K { move-window-up; }
+  Mod+Ctrl+L { move-column-right; }
+
+  // Monitor Focus (Shift + hjkl)
+  Mod+Shift+H { focus-monitor-left; }
+  Mod+Shift+L { focus-monitor-right; }
+  Mod+Shift+K { focus-monitor-up; }
+  Mod+Shift+J { focus-monitor-down; }
+
+  // Move Column to Monitor (Shift + Ctrl + hjkl)
+  Mod+Shift+Ctrl+H { move-column-to-monitor-left; }
+  Mod+Shift+Ctrl+L { move-column-to-monitor-down; }
+  Mod+Shift+Ctrl+K { move-column-to-monitor-up; }
+  Mod+Shift+Ctrl+J { move-column-to-monitor-right; }
+
+  // Workspace Navigation
+  Mod+U { focus-workspace-down; }
+  Mod+I { focus-workspace-up; }
+  Mod+Ctrl+U { move-column-to-workspace-down; }
+  Mod+Ctrl+I { move-column-to-workspace-up; }
+
+  // Move Workspace
+  Mod+Shift+U { move-workspace-down; }
+  Mod+Shift+I { move-workspace-up; }
+
+  Mod+F { maximize-column; }
+  Mod+Shift+F { fullscreen-window; }
+  Mod+M { maximize-window-to-edges; }
+
+  Mod+Ctrl+F { expand-column-to-available-width; }
+
+  // Finer width adjustments
+  Mod+Minus { set-column-width "-10%"; }
+  Mod+Shift+Minus { set-column-width "+10%"; }
+
+  // Finer height adjustments
+  Mod+Semicolon { set-window-height "-10%"; }
+  Mod+Shift+Semicolon { set-window-height "+10%"; }
+
+  Print { screenshot; }
+  Ctrl+Print { screenshot-screen; }
+  Alt+Print { screenshot-window; }
+
+  Mod+Shift+E { quit; }
+
+  Mod+Shift+P { power-off-monitors; }
+}

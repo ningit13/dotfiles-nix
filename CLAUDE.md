@@ -49,9 +49,8 @@ hosts/
     hardware-configuration.nix         # (nixos only) hardware scan output
 home-manager/
   default.nix                          # Imports misc/, programs/, services/
-  desktop.nix                          # Desktop-only additions (fonts, graphical programs)
+  desktop.nix                          # Desktop-only additions (graphical programs)
   wsl.nix                              # WSL2-only additions (SSH agent)
-  fonts/                               # Font configuration
   misc/
     home/                              # Home directory settings
     xdg/                               # XDG base directory config
@@ -59,14 +58,16 @@ home-manager/
     default.nix                        # Imports all program categories
     desktop.nix                        # Desktop-only program aggregator
     apps/                              # GUI applications (bitwarden, obsidian, slack)
-    browser/                           # Browser config (brave)
-    cli-tools/                         # CLI utilities (direnv, eza, fd, fzf, git, jq, lazygit, ripgrep, yazi, zoxide, claude-code)
+    browser/                           # Browser config (brave, firefox)
+    cli-tools/                         # CLI utilities (bat, claude-code, direnv, eza, fd, fzf, glow, jq, pandoc, ripgrep, yazi, zoxide)
     cloud/                             # Cloud tools (awscli)
     editor/
       nixvim/                          # Neovim via nixvim (common/, lsp/, plugins/)
       vscode/                          # VS Code config
     lang/                              # Language toolchains (python)
     terminal/                          # Terminal emulators and shell (alacritty, tmux, zsh)
+    vcs/                               # Version control tools (gh, git, lazygit, ydiff)
+    wm/                                # Wayland desktop session (niri, fuzzel, waybar, mako, kanshi, swayidle, swaylock, swayosd, awww, cliphist, wl-clipboard); Linux-only
   services/                            # systemd and WSL2 services
 nix/config/                            # Shared nix daemon settings (gc, flakes, trusted-users)
 nix-darwin/config/                     # macOS-only system config (brew casks, dock, fonts)
@@ -74,11 +75,17 @@ nixos/
   default.nix                          # Imports all NixOS config modules
   config/
     boot.nix                           # Bootloader settings
-    configuration.nix                  # Core system config (networking, locale, desktop, sound)
+    console.nix                        # Virtual console keymap
     fonts.nix                          # System-wide font packages
+    i18n.nix                           # Locale settings
+    networking.nix                     # Hostname and network settings
     nix.nix                            # Nix daemon settings for NixOS
+    security.nix                       # PAM services (swaylock)
+    services.nix                       # Display manager, GNOME desktop, keymap, sound
     system.nix                         # stateVersion and other system-level options
+    time.nix                           # Time zone
     users.nix                          # User accounts and groups
+    wm.nix                             # niri session registration
 ```
 
 ### Key conventions
@@ -90,4 +97,5 @@ nixos/
 - `nix-darwin` configs live separately from `home-manager` configs; the mac host wires them together in `hosts/mac/default.nix`.
 - The `nixos` host uses `nixosSystem` and embeds home-manager via `home-manager.nixosModules.home-manager`, so no separate `home-manager switch` is needed — `nixos-rebuild` applies both.
 - NixOS system-level modules live in `nixos/config/`; host-specific hardware config is in `hosts/nixos/hardware-configuration.nix`.
+- The niri session is split: package/session registration is NixOS-level (`nixos/config/wm.nix`) and swaylock PAM lives in `nixos/config/security.nix`; user config (`config.kdl`, launcher, bar, etc.) lives in `home-manager/programs/wm/`, gated to Linux in `home-manager/programs/desktop.nix`.
 - Formatting is enforced by `treefmt-nix` using `nixfmt`.
