@@ -11,14 +11,52 @@
   "modules-center": [ "clock" ],
   "modules-right": [
     "tray",
+    "keyboard-state",
     "network",
-    "bluetooth",
-    "pulseaudio",
+    // "pulseaudio",
+    "power-profile-daemon",
     "battery"
   ],
 
-  "tray": {
+  "niri/workspace": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
+  },
 
+  "niri/window": {
+    "format": "{}"
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%Y/%m/%d}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "format": {
+        "months":   "<span color='#ffead3'><b>{}</b></span>",
+        "days":     "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":    "<span color='#99ffdd'><b>CW{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today":    "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+
+  "tray": {},
+
+  "keyboard-state": {
+    "format": "{name} {icon}",
+    "capslock": true,
+    "format-icons": {
+      "locked": "󱚫",
+      "unlocked": "󰿇"
+    }
   },
 
   "network": {
@@ -32,5 +70,33 @@
     "format-disconnected": "󰤭",
     "format-ethernet": "󰈁",
     "on-click": "networkmanager_dmenu"
+  },
+
+  // "pulseaudio": {
+
+  // },
+
+  "power-profile-daemon": {
+    "format": "{icon}",
+    "tooltip": true,
+    "tooltip-format": "Power profile: {profile}nCPU driver: {cpu_driver}nPlatform driver: {platform_driver}",
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+
+  "battery":{
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰃨",
+    "format-plugged": "{capacity}% ",
+    "format-icons": ["", "", "", "", ""]
   }
 }
