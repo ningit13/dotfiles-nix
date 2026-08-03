@@ -1,0 +1,36 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "height": 30,
+  "spacing": 4,
+
+  "modules-left": [
+    "niri/workspace",
+    "niri/window"
+  ],
+  "modules-center": [ "clock" ],
+  "modules-right": [
+    "tray",
+    "network",
+    "bluetooth",
+    "pulseaudio",
+    "battery"
+  ],
+
+  "tray": {
+
+  },
+
+  "network": {
+    "format-wifi": "{icon}",
+    "format-icons": [
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "format-disconnected": "󰤭",
+    "format-ethernet": "󰈁",
+    "on-click": "networkmanager_dmenu"
+  }
+}
