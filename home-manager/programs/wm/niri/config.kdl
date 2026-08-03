@@ -14,10 +14,21 @@ input {
 layout {
   gaps 8
 
+  preset-column-widths {
+    proportion 0.33333
+    proportion 0.5
+    proportion 0.66667
+  }
+
+  default-column-width { proportion 0.5; }
+
   focus-ring {
     on
     width 2
   }
+
+  border { off; }
+  shadow { off; }
 }
 
 hotkey-overlay {
@@ -54,13 +65,13 @@ binds {
 
   Mod+Q { close-window; }
 
-  // Vi-style Focus Navigation (hjkl)
+  // Focus Navigation (hjkl)
   Mod+H { focus-column-left; }
   Mod+J { focus-window-down; }
   Mod+K { focus-window-up; }
   Mod+L { focus-column-right; }
 
-  // Vi-style Window Movement (Ctrl + hjkl)
+  // Window Movement (Ctrl + hjkl)
   Mod+Ctrl+H { move-column-left; }
   Mod+Ctrl+J { move-window-down; }
   Mod+Ctrl+K { move-window-up; }
@@ -87,6 +98,16 @@ binds {
   // Move Workspace
   Mod+Shift+U { move-workspace-down; }
   Mod+Shift+I { move-workspace-up; }
+
+  // Consume/Expel windows from/to columns
+  Mod+BracketLeft { consume-window-to-column-left; }
+  Mod+BracketRight { consume-window-to-column-right; }
+
+  // Cycle through preset column widths and window heights
+  Mod+R { switch-preset-column-width; }
+  Mod+Shift+R { switch-preset-window-height; }
+
+  Mod+Ctrl+R { reset-window-height; }
 
   Mod+F { maximize-column; }
   Mod+Shift+F { fullscreen-window; }
