@@ -19,14 +19,12 @@ layout {
     proportion 0.5
     proportion 0.66667
   }
-
   default-column-width { proportion 0.5; }
 
   focus-ring {
     on
     width 2
   }
-
   border { off; }
   shadow { off; }
 }
@@ -35,10 +33,28 @@ hotkey-overlay {
   skip-at-startup
 }
 
+overview {
+  zoom 0.5
+}
+
 // This flag is make niri ask the applications to omit their client-side decorations.
 prefer-no-csd
 
 spawn-at-startup "awww-daemon"
+
+window-rule {
+  match app-id="pavucontrol"
+  open-floating true
+  default-column-width { proportion 0.6; }
+  default-window-height { proportion 0.6; }
+}
+
+window-rule {
+  match app-id="blueman-manager"
+  open-floating true
+  default-column-width { proportion 0.6; }
+  default-window-height { proportion 0.6; }
+}
 
 binds {
   Mod+Shift+Slash { show-hotkey-overlay; }
@@ -52,13 +68,13 @@ binds {
   Mod+V { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
 
   // Volume Control
-  XF86AudioRaiseVolume { spawn "swayosd-client" "--output-volume" "raise"; }
-  XF86AudioLowerVolume { spawn "swayosd-client" "--output-volume" "lower"; }
-  XF86AudioMute { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
+  XF86AudioRaiseVolume { spawn-sh "swayosd-client --output-volume raise"; }
+  XF86AudioLowerVolume { spawn-sh "swayosd-client --output-volume lower"; }
+  XF86AudioMute { spawn-sh "swayosd-client --output-volume mute-toggle"; }
 
   // Brightness Control
-  XF86MonBrightnessUp { spawn "swayosd-client" "--brightness" "raise"; }
-  XF86MonBrightnessDown { spawn "swayosd-client" "--brightness" "lower"; }
+  XF86MonBrightnessUp { spawn-sh "swayosd-client --brightness raise"; }
+  XF86MonBrightnessDown { spawn-sh "swayosd-client --brightness lower"; }
 
   // Open/close the Overview
   Mod+O { toggle-overview; }
@@ -122,6 +138,10 @@ binds {
   // Finer height adjustments
   Mod+Semicolon { set-window-height "-10%"; }
   Mod+Shift+Semicolon { set-window-height "+10%"; }
+
+  // Move the focused window between the floating and the tiling layout
+  Mod+N { toggle-window-floating; }
+  Mod+Shift+N { switch-focus-between-floating-and-tiling; }
 
   Print { screenshot; }
   Ctrl+Print { screenshot-screen; }
