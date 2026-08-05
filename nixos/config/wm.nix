@@ -5,4 +5,6 @@
   environment.systemPackages = with pkgs; [
     xwayland-satellite
   ];
+
+  hardware.bluetooth.enable = true;
 }
