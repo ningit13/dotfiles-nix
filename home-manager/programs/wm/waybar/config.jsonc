@@ -8,14 +8,15 @@
     "niri/workspaces",
     "niri/window"
   ],
-  "modules-center": [ "clock" ],
+  // "modules-center": [ ],
   "modules-right": [
     "tray",
     "keyboard-state",
     "network",
-    // "pulseaudio",
+    "pulseaudio",
     "power-profiles-daemon",
-    "battery"
+    "battery",
+    "clock"
   ],
 
   "niri/workspaces": {
@@ -27,28 +28,13 @@
   },
 
   "niri/window": {
-    "format": "{}"
+    "format": "{app_id}"
   },
 
-  "clock": {
-    "format": "{:%H:%M}",
-    "format-alt": "{:%Y/%m/%d}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "year",
-      "mode-mon-col": 3,
-      "weeks-pos": "right",
-      "format": {
-        "months":   "<span color='#ffead3'><b>{}</b></span>",
-        "days":     "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks":    "<span color='#99ffdd'><b>CW{}</b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today":    "<span color='#ff6699'><b><u>{}</u></b></span>"
-      }
-    }
+  "tray": {
+    "spacing": 4,
+    "expand": true
   },
-
-  "tray": {},
 
   "keyboard-state": {
     "format": "{name} {icon}",
@@ -68,13 +54,24 @@
       "󰤨"
     ],
     "format-disconnected": "󰤭",
+    "tooltip-format": "{essid}",
     "format-ethernet": "󰈁",
+    // "tooltip-format-ethernet": "",
     "on-click": "networkmanager_dmenu"
   },
 
-  // "pulseaudio": {
-
-  // },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "",
+    "format-bluetooth": "{icon}󰂯",
+    "format-bluetooth-muted": "󰂯",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "tooltip-format": "{volume}%",
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_SINK@ toggle"
+  },
 
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -98,5 +95,23 @@
     "format-charging": "{capacity}% 󰃨",
     "format-plugged": "{capacity}% ",
     "format-icons": ["", "", "", "", ""]
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%Y/%m/%d}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "format": {
+        "months":   "<span color='#ffead3'><b>{}</b></span>",
+        "days":     "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":    "<span color='#99ffdd'><b>CW{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today":    "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
   }
 }
