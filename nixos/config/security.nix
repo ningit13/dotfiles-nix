@@ -4,4 +4,5 @@
   security.pam.services.gdm.enableGnomeKeyring = true;
 
   security.polkit.enable = true;
+  security.rtkit.enable = true;
 }
