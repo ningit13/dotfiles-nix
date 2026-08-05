@@ -100,8 +100,8 @@ binds {
   Mod+Shift+I { move-workspace-up; }
 
   // Consume/Expel windows from/to columns
-  Mod+BracketLeft { consume-window-to-column-left; }
-  Mod+BracketRight { consume-window-to-column-right; }
+  Mod+BracketLeft { consume-or-expel-window-left; }
+  Mod+BracketRight { consume-or-expel-window-right; }
 
   // Cycle through preset column widths and window heights
   Mod+R { switch-preset-column-width; }
