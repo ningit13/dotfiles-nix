@@ -9,6 +9,7 @@
     ./config/security.nix
     ./config/services.nix
     ./config/system.nix
+    ./config/systemd.nix
     ./config/time.nix
     ./config/users.nix
     ./config/wm.nix

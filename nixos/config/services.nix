@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
@@ -26,4 +27,7 @@
   services.gnome.gnome-keyring.enable = true;
   services.dbus.enable = true;
   services.blueman.enable = true;
+
+  services.dbus.packages = [ pkgs.swayosd ];
+  services.udev.packages = [ pkgs.swayosd ];
 }
