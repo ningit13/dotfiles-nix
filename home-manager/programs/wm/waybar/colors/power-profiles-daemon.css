@@ -1,0 +1,11 @@
+#power-profiles-daemon.performance {
+  color: @red;
+}
+
+#power-profiles-daemon.balanced {
+  color: @fg;
+}
+
+#power-profiles-daemon.power-saver {
+  color: @green;
+}

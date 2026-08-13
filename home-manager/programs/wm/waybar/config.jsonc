@@ -1,117 +1,36 @@
 {
-  "layer": "bottom",
+  "include": [
+    "modules/application.jsonc",
+    "modules/audio.jsonc",
+    "modules/battery.jsonc",
+    "modules/bluetooth.jsonc",
+    "modules/clock.jsonc",
+    "modules/network.jsonc",
+    "modules/player.jsonc",
+    "modules/power-profiles-daemon.jsonc",
+    "modules/tray.jsonc",
+    "modules/workspaces.jsonc"
+  ],
+
+  "layer": "top",
   "position": "top",
-  "height": 30,
+  "height": 40,
   "spacing": 4,
 
   "modules-left": [
     "niri/workspaces",
-    "niri/window"
+    "group/player"
   ],
-  // "modules-center": [ ],
+  "modules-center": [
+    "group/application",
+    "clock",
+    "group/tray-group"
+  ],
   "modules-right": [
-    "tray",
-    "keyboard-state",
+    "group/audio",
+    "bluetooth",
     "network",
-    "pulseaudio",
     "power-profiles-daemon",
-    "battery",
-    "clock"
-  ],
-
-  "niri/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "active": "",
-      "default": ""
-    }
-  },
-
-  "niri/window": {
-    "format": "{app_id}"
-  },
-
-  "tray": {
-    "spacing": 4,
-    "expand": true
-  },
-
-  "keyboard-state": {
-    "format": "{name} {icon}",
-    "capslock": true,
-    "format-icons": {
-      "locked": "󱚫",
-      "unlocked": "󰿇"
-    }
-  },
-
-  "network": {
-    "format-wifi": "{icon}",
-    "format-icons": [
-      "󰤟",
-      "󰤢",
-      "󰤥",
-      "󰤨"
-    ],
-    "format-disconnected": "󰤭",
-    "tooltip-format": "{essid}",
-    "format-ethernet": "󰈁",
-    // "tooltip-format-ethernet": "",
-    "on-click": "networkmanager_dmenu"
-  },
-
-  "pulseaudio": {
-    "format": "{icon}",
-    "format-muted": "",
-    "format-bluetooth": "{icon}󰂯",
-    "format-bluetooth-muted": "󰂯",
-    "format-icons": {
-      "default": ["", "", ""]
-    },
-    "tooltip-format": "{volume}%",
-    "on-click": "pavucontrol",
-    "on-click-right": "wpctl set-mute @DEFAULT_SINK@ toggle"
-  },
-
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip": true,
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    }
-  },
-
-  "battery":{
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% 󰃨",
-    "format-plugged": "{capacity}% ",
-    "format-icons": ["", "", "", "", ""]
-  },
-
-  "clock": {
-    "format": "{:%H:%M}",
-    "format-alt": "{:%Y/%m/%d}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "year",
-      "mode-mon-col": 3,
-      "weeks-pos": "right",
-      "format": {
-        "months":   "<span color='#ffead3'><b>{}</b></span>",
-        "days":     "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks":    "<span color='#99ffdd'><b>CW{}</b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today":    "<span color='#ff6699'><b><u>{}</u></b></span>"
-      }
-    }
-  }
+    "battery"
+  ]
 }

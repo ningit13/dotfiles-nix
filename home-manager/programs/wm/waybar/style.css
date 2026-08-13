@@ -1,0 +1,47 @@
+@import "colors/colors.css";
+
+@import "colors/application.css";
+@import "colors/audio.css";
+@import "colors/battery.css";
+@import "colors/player.css";
+@import "colors/power-profiles-daemon.css";
+@import "colors/tray.css";
+@import "colors/workspaces.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+  font-family: 'CaskaydiaCove Nerd Font Propo';
+  font-weight: bold;
+}
+
+window#waybar {
+  background: transparent;
+  color: @fg;
+}
+
+#clock,
+#battery
+{
+  margin: 3px 5px;
+  padding: 5px 10px;
+  background-color: @bg;
+  border-radius: 15px;
+}
+
+#player,      /* group */
+#application, /* group */
+#tray-group,  /* group */
+#audio,       /* group */
+#bluetooth,
+#network,
+#power-profiles-daemon
+{
+  margin: 3px;
+  padding: 5px 10px;
+  background-color: @bg;
+  border-radius: 20px;
+}

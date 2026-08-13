@@ -1,0 +1,21 @@
+{
+  "custom/tray-symbol": {
+    "format": "󰏖",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 16,
+    "show-passive-items": true,
+    "spacing": 5
+  },
+  "group/tray-group": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/tray-symbol",
+      "tray"
+    ],
+    "drawer": {
+      "transition-left-to-right": true
+    }
+  }
+}

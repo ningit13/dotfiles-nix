@@ -1,0 +1,15 @@
+{
+  "network": {
+    "format-wifi": "{icon}",
+    "format-icons": [
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "format-disconnected": "󰤭",
+    "tooltip-format": "{essid}",
+    "format-ethernet": "󰈁",
+    "on-click": "networkmanager_dmenu"
+  }
+}

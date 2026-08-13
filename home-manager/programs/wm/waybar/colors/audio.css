@@ -1,0 +1,32 @@
+#pulseaudio.microphone {
+  margin: 3px 5px;
+}
+
+#pulseaudio-slider {
+  margin: 3px;
+  padding: 0px 3px;
+}
+
+#pulseaudio-slider slider {
+  min-height: 12px;
+  min-width: 12px;
+  margin: -2px 0;
+  border-radius: 100%;
+}
+
+#pulseaudio-slider trough {
+  min-height: 10px;
+  min-width: 80px;
+  border-radius: 10px;
+  background-color: black;
+}
+
+#pulseaudio-slider highlight {
+  min-height: 10px;
+  border-radius: 10px;
+  background-color:@green;
+}
+
+#pulseaudio-slider.muted highlight {
+  background-color: orange;
+}

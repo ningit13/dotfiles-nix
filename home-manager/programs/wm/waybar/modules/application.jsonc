@@ -1,0 +1,44 @@
+{
+  "custom/app-symbol": {
+    "format": "󱄅",
+    "tooltip": false
+  },
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false
+  },
+  "custom/terminal": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "alacritty"
+  },
+  "custom/browser": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "brave"
+  },
+  "custom/slack": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "slack"
+  },
+  "custom/firefox": {
+    "format": "󰈹",
+    "tooltip": false,
+    "on-click": "firefox"
+  },
+  "group/application": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/app-symbol",
+      "custom/terminal",
+      "custom/browser",
+      "custom/slack",
+      "custom/firefox",
+      "custom/separator"
+    ],
+    "drawer": {
+      "transition-left-to-right": false
+    }
+  }
+}
