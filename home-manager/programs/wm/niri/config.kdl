@@ -34,7 +34,13 @@ hotkey-overlay {
 }
 
 overview {
-  zoom 0.5
+  zoom 0.4
+}
+
+cursor {
+  xcursor-theme "Adwaita"
+  xcursor-size 24
+  hide-when-typing
 }
 
 // This flag is make niri ask the applications to omit their client-side decorations.
@@ -75,6 +81,9 @@ binds {
   // Brightness Control
   XF86MonBrightnessUp { spawn-sh "swayosd-client --brightness raise"; }
   XF86MonBrightnessDown { spawn-sh "swayosd-client --brightness lower"; }
+
+  // Capslock
+  Caps_Lock { spawn-sh "swayosd-client --caps-lock"; }
 
   // Open/close the Overview
   Mod+O { toggle-overview; }
