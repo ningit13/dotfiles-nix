@@ -1,8 +1,7 @@
 {
   programs.fuzzel = {
     enable = true;
-    settings = {
-      main.terminal = "alacritty";
-    };
   };
+
+  xdg.configFile."fuzzel/fuzzel.ini".source = ./fuzzel.ini;
 }
