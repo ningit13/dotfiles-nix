@@ -1,0 +1,39 @@
+{
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-icons": {
+      "headphone": "󰋋",
+      "headphone-muted": "󰟎",
+      "speaker": "",
+      "speaker-muted": "",
+      "default": ""
+    },
+    "tooltip-format": "{volume}%",
+    "scroll-step": 2.0,
+    "on-click": "pavucontrol"
+  },
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": ""
+  },
+
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "zero-on-mute": false
+  },
+
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider",
+      "pulseaudio#microphone"
+    ],
+    "drawer": {
+      "transition-left-to-right": false
+    }
+  }
+}

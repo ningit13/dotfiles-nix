@@ -1,0 +1,19 @@
+#custom-terminal,
+#custom-browser,
+#custom-slack,
+#custom-firefox {
+  margin: 3px 7px;
+}
+
+#custom-app-symbol {
+  color: #0c8dc0;
+}
+#custom-terminal {
+  color: #ce4800;
+}
+#custom-slack {
+  color: #37ba13;
+}
+#custom-firefox {
+  color: #e37c07;
+}

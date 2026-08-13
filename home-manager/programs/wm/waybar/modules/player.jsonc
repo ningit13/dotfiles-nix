@@ -1,0 +1,27 @@
+{
+  "custom/player-symbol": {
+    "format": "",
+    "tooltip": false
+  },
+  "mpris": {
+    "format": "{status_icon} {title}",
+    "tooltip-format": "{player} ({status}): {dynamic}",
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    },
+    "album-len": 0,
+    "max-length": 45
+  },
+  "group/player": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/player-symbol",
+      "mpris"
+    ],
+    "drawer": {
+      "transition-left-to-right": true
+    }
+  }
+}
