@@ -7,6 +7,7 @@
     ./mako
     ./networkmanager_dmenu
     ./niri
+    ./playerctl
     ./polkit
     ./swayidle
     ./swaylock
