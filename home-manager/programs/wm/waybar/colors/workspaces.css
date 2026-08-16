@@ -1,10 +1,12 @@
 #workspaces {
   margin: 3px 0;
+  background-color: @bg;
+  border-radius: 10px;
 }
 #workspaces button {
   padding: 0 3px;
   border-radius: 10px;
 }
 #workspaces button:hover {
-  background: @bg;
+  background-color: #8daba9;
 }

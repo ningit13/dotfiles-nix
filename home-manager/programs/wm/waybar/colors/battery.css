@@ -1,7 +1,7 @@
-#battery.warning:not(.charging, .plugged) {
+#battery.warning:not(.charging):not(.plugged) {
   color: @yellow;
 }
 
-#battery.critical:not(.charging, .plugged) {
+#battery.critical:not(.charging):not(.plugged) {
   color: @red;
 }
