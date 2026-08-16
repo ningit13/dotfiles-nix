@@ -1,4 +1,5 @@
 #custom-terminal,
+#custom-file-manager,
 #custom-browser,
 #custom-slack,
 #custom-firefox {
@@ -10,6 +11,9 @@
 }
 #custom-terminal {
   color: #ce4800;
+}
+#custom-file-manager {
+  color: #d7ae1a;
 }
 #custom-slack {
   color: #37ba13;

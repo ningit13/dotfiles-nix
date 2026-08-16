@@ -12,8 +12,13 @@
     "tooltip": false,
     "on-click": "alacritty"
   },
+  "custom/file-manager": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "nautilus"
+  },
   "custom/browser": {
-    "format": "",
+    "format": "",
     "tooltip": false,
     "on-click": "brave"
   },
@@ -32,6 +37,7 @@
     "modules": [
       "custom/app-symbol",
       "custom/terminal",
+      "custom/file-manager",
       "custom/browser",
       "custom/slack",
       "custom/firefox",
