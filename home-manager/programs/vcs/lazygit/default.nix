@@ -10,7 +10,7 @@
         sidePanelWidth = 0.2; # gives you more space to show things side-by-side
       };
       git = {
-        pagers = [
+        command = [
           {
             colorArg = "never";
             pager = "ydiff -p cat -s --wrap --width={{columnWidth}}";
