@@ -49,6 +49,11 @@
       # set window style
       set -g window-style "bg=default,fg=colour242"
       set -g window-active-style "bg=default,fg=colour250"
+
+      # required for yazi's image preview in tmux
+      set -g allow-passthrough on
+      set -ga update-environment TERM
+      set -ga update-environment TERM_PROGRAM
     '';
   };
 }

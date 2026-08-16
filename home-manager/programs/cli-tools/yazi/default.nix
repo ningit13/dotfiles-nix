@@ -9,6 +9,12 @@
         sort_dir_first = true;
         sort_by = "natural";
       };
+
+      preview = {
+        image_delay = 500;
+        image_filter = "triangle";
+        image_quality = 50;
+      };
     };
   };
 }
