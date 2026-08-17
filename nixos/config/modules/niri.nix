@@ -4,7 +4,6 @@
 
   environment.systemPackages = with pkgs; [
     xwayland-satellite
+    nautilus
   ];
-
-  hardware.bluetooth.enable = true;
 }

@@ -14,4 +14,7 @@
       Restart = "on-failure";
     };
   };
+
+  services.dbus.packages = [ pkgs.swayosd ];
+  services.udev.packages = [ pkgs.swayosd ];
 }

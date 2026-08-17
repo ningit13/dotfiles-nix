@@ -1,8 +1,4 @@
-{ pkgs, ... }:
 {
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
   # Configure keymap in X11 (wayland).
   services.xserver.xkb = {
     layout = "jp";
@@ -27,7 +23,5 @@
   services.gnome.gnome-keyring.enable = true;
   services.dbus.enable = true;
   services.blueman.enable = true;
-
-  services.dbus.packages = [ pkgs.swayosd ];
-  services.udev.packages = [ pkgs.swayosd ];
+  services.power-profiles-daemon.enable = true;
 }
