@@ -38,7 +38,7 @@ overview {
 }
 
 cursor {
-  xcursor-theme "Adwaita"
+  xcursor-theme "WhiteSur-cursors"
   xcursor-size 24
   hide-when-typing
 }

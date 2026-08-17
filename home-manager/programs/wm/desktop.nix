@@ -8,6 +8,7 @@
     ./networkmanager_dmenu
     ./niri
     ./playerctl
+    ./pointer-cursor
     ./polkit
     ./swayidle
     ./swaylock
