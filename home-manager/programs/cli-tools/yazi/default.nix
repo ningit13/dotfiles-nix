@@ -11,7 +11,6 @@
       };
 
       preview = {
-        image_delay = 500;
         image_filter = "triangle";
         image_quality = 50;
       };
