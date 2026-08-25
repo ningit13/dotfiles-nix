@@ -28,7 +28,7 @@
           criteria = "*";
           status = "enable";
           position = "0,0";
-          scale = 1.0;
+          scale = 1.5;
         }
       ];
     }
@@ -48,7 +48,7 @@
           criteria = "*";
           status = "enable";
           position = "1920,0";
-          scale = 1.0;
+          scale = 1.5;
         }
       ];
     }
