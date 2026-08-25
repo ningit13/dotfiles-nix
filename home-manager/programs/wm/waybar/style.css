@@ -3,6 +3,7 @@
 @import "colors/application.css";
 @import "colors/audio.css";
 @import "colors/battery.css";
+@import "colors/idle_inhibitor.css";
 @import "colors/player.css";
 @import "colors/power-profiles-daemon.css";
 @import "colors/tray.css";
@@ -38,6 +39,7 @@ window#waybar {
 #audio,       /* group */
 #bluetooth,
 #network,
+#idle_inhibitor,
 #power-profiles-daemon
 {
   margin: 3px;

@@ -5,6 +5,7 @@
     "modules/battery.jsonc",
     "modules/bluetooth.jsonc",
     "modules/clock.jsonc",
+    "modules/idle_inhibitor.jsonc",
     "modules/network.jsonc",
     "modules/player.jsonc",
     "modules/power-profiles-daemon.jsonc",
@@ -30,6 +31,7 @@
     "group/audio",
     "bluetooth",
     "network",
+    "idle_inhibitor",
     "power-profiles-daemon",
     "battery"
   ]
