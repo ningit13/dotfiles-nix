@@ -6,7 +6,7 @@
     ./editor/desktop.nix
     ./terminal/desktop.nix
   ]
-  ++ lib.optionals pkgs.stdenv.isLinux [
+  ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
     ./wm/desktop.nix
   ];
 }
