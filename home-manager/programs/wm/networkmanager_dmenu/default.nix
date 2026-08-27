@@ -11,6 +11,6 @@
     list_saved = True
 
     [editor]
-    terminal = alacritty
+    terminal = ghostty
   '';
 }

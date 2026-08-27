@@ -8,9 +8,9 @@
     "tooltip": false
   },
   "custom/terminal": {
-    "format": "",
+    "format": "󰊠",
     "tooltip": false,
-    "on-click": "alacritty"
+    "on-click": "ghostty"
   },
   "custom/file-manager": {
     "format": "",

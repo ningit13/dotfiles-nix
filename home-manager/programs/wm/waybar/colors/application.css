@@ -10,7 +10,7 @@
   color: #0c8dc0;
 }
 #custom-terminal {
-  color: #ce4800;
+  color: @fg;
 }
 #custom-file-manager {
   color: #d7ae1a;
