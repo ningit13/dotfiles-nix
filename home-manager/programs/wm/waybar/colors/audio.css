@@ -24,7 +24,7 @@
 #pulseaudio-slider highlight {
   min-height: 10px;
   border-radius: 10px;
-  background-color:@green;
+  background-color: @green;
 }
 
 #pulseaudio-slider.muted highlight {
