@@ -27,17 +27,6 @@ let
       sha256 = "sha256-bouct+f0FdRjx7+stAOzTb1Ozg+vjr3MmyLabL+ThzM=";
     };
   };
-  window-name = tmuxPlugins.mkTmuxPlugin {
-    pluginName = "tmux-window-name";
-    version = "";
-    rtpFilePath = "tmux_window_name.tmux";
-    src = fetchFromGitHub {
-      owner = "ofirgall";
-      repo = "tmux-window-name";
-      rev = "master";
-      sha256 = "sha256-YI2s/OtywKJQAPpb07dCbWA/6+sWAl+DB+QQbvZOG5k=";
-    };
-  };
   session-dots = tmuxPlugins.mkTmuxPlugin {
     pluginName = "tmux-session-dots";
     version = "";
@@ -85,14 +74,14 @@ with pkgs.tmuxPlugins;
   { plugin = load-avg; }
   { plugin = ram; }
   {
-    plugin = window-name;
+    plugin = tmux-window-name;
     extraConfig = ''
-      set -g @tmux_window_name_shells "['zsh', 'bash']"
-      set -g @tmux_window_dir_programs "['nvim', 'git']"
+      set -g @tmux_window_name_shells "['zsh']"
+      set -g @tmux_window_dir_programs "['nvim', 'lazygit']"
       set -g @tmux_window_name_max_name_len "10"
       set -g @tmux_window_name_use_tilde "True"
-      set -g @tmux_window_name_icon_style "'name_and_icon'"
-      set -g @tmux_window_name_custom_icons '{"nvim": "", "python3": ""}'
+      set -g @tmux_window_name_icon_style "'dir_and_icon'"
+      set -g @tmux_window_name_ignore_program_diffs "True"
     '';
   }
   {
