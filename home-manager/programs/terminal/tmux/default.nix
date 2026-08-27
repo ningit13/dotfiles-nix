@@ -15,7 +15,6 @@
       set-option -g pane-active-border-style "fg=brightgreen"
       set-option -g pane-border-style        "fg=brightblack"
 
-      # Change prefix key C-b -> C-f
       bind-key | split-window -h     # split window horizontally
       bind-key - split-window -v     # split window vertically
 
@@ -26,9 +25,6 @@
 
       bind-key C-[ switch-client -p    # switch to previous session
       bind-key C-] switch-client -n    # switch to next session
-
-      # reload config file with prefix + r
-      bind-key r source-file $XDG_CONFIG_HOME/tmux/tmux.conf \; display-message "Config reloaded!"
 
       # display popup
       bind-key P display-popup -E -w 60% -h 60% -x C
@@ -42,7 +38,8 @@
 
       # set window status
       set -g status-justify centre
-      set -g window-status-current-style reverse
+      set -g window-status-style "fg=colour242"
+      set -g window-status-current-style "fg=colour223"
       set -g window-status-format "#I:#W"
       set -g window-status-current-format "#I:#W"
 
