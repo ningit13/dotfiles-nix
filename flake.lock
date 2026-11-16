@@ -223,11 +223,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1794203590,
-        "narHash": "sha256-yjysUAoa2vGOOphHAo8mo7ixgxuiY2RDjybu6+mAlX0=",
+        "lastModified": 1794551127,
+        "narHash": "sha256-7xrhasoMyiYpgKNepOXgzDbL9Ote9rYyze5LF1k75II=",
         "owner": "nix-community",
         "repo": "nix4vscode",
-        "rev": "c06b9236b78dde9a0db7ae1ceeae587b374221c6",
+        "rev": "b875ff8243e4b7d76ba70a6cfcb9402aa48fbae9",
         "type": "github"
       },
       "original": {
