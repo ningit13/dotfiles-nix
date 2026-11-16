@@ -69,6 +69,17 @@ direnv allow   # auto-activates the shell via .envrc
 nix develop
 ```
 
+## Post-install steps
+
+### herdr plugins
+
+herdr plugins can't be managed declaratively, so install them manually after applying the configuration:
+
+```zsh
+herdr plugin install kryptamine/herdr-auto-title --ref stable
+herdr plugin install abroller666/broadcast-pane
+```
+
 ## Troubleshooting
 
 ### Experimental features not enabled system-wide
