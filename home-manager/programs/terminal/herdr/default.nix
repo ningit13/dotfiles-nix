@@ -26,6 +26,13 @@
             width = "80%";
             height = "80%";
           }
+          # plugin actions
+          {
+            key = "prefix+a";
+            description = "broadcast to all panes";
+            command = "abroller666.broadcast-pane.open";
+            type = "plugin_action";
+          }
         ];
       };
 
