@@ -64,7 +64,7 @@ home-manager/
     editor/
       nixvim/                          # Neovim via nixvim (common/, lsp/, plugins/)
       vscode/                          # VS Code config
-    lang/                              # Language toolchains (python)
+    lang/                              # Language toolchains (cargo, python)
     terminal/                          # Terminal emulators and shell (alacritty, tmux, zsh)
     vcs/                               # Version control tools (gh, git, lazygit, ydiff)
     wm/                                # Wayland desktop session (niri, fuzzel, waybar, mako, kanshi, swayidle, swaylock, swayosd, awww, cliphist, wl-clipboard); Linux-only
