@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  profile,
+  ...
+}:
 {
   imports =
     lib.optionals pkgs.stdenv.hostPlatform.isLinux [
@@ -7,4 +12,8 @@
       ./slack
     ]
     ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [ ];
+
+  programs.zsh.localVariables = {
+    SSH_AUTH_SOCK = "${profile.homeDirectory}/.bitwarden-ssh-agent.sock";
+  };
 }
