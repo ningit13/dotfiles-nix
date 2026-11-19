@@ -10,6 +10,7 @@ in
     ./config/homebrew.nix
     ./config/nix.nix
     ./config/programs.nix
+    ./config/services.nix
     ./config/system.nix
   ];
 }
