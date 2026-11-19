@@ -3,6 +3,8 @@
     enable = true;
 
     settings = {
+      onboarding = false;
+
       keys = {
         detach = "prefix+d";
         next_workspace = "prefix+ctrl+]";
