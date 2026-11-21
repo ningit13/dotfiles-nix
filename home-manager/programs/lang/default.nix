@@ -1,6 +1,7 @@
 {
   imports = [
     ./cargo
+    ./nodejs
     ./python
   ];
 }
