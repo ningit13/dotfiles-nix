@@ -46,6 +46,7 @@
       ui = {
         prompt_new_tab_name = false;
         pane_gaps = false;
+        status_indicators = "symbols";
         tab_bar_position = "bottom";
         tab_bar_right = [
           {
@@ -53,7 +54,7 @@
           }
           {
             type = "datetime";
-            format = "%H:%M  %Y/%m/%d  %a";
+            format = "%H:%M  %Y/%m/%d  %a  󰨳 %U";
           }
         ];
         tab_bar_right_separator = "  ";
