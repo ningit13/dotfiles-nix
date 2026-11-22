@@ -1,9 +1,13 @@
 {
-  colorschemes.tokyonight = {
+  colorschemes.github-theme = {
     enable = true;
     settings = {
-      style = "night";
-      transparent = false;
+      options = {
+        transparent = true;
+      };
     };
+    luaConfig.content = ''
+      vim.cmd.colorscheme("github_dark_colorblind")
+    '';
   };
 }
