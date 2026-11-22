@@ -65,7 +65,7 @@ home-manager/
       nixvim/                          # Neovim via nixvim (common/, lsp/, plugins/)
       vscode/                          # VS Code config
     lang/                              # Language toolchains (cargo, nodejs, python)
-    terminal/                          # Terminal emulators, multiplexers and shell (alacritty, ghostty, herdr, herdr-core, tmux, zsh)
+    terminal/                          # Terminal emulators, multiplexers and shell (ghostty, herdr, herdr-core, tmux, zsh)
     vcs/                               # Version control tools (gh, git, lazygit, ydiff)
     wm/                                # Wayland desktop session (niri, fuzzel, waybar, mako, kanshi, swayidle, swaylock, swayosd, awww, cliphist, wl-clipboard, networkmanager_dmenu, playerctl, pointer-cursor, polkit); Linux-only
   services/                            # systemd and WSL2 services
@@ -97,7 +97,7 @@ nixos/
 ### Key conventions
 
 - `hosts/profile.nix` provides shared defaults; each host's own `profile.nix` overrides as needed, passing user identity (username, homeDirectory, git name/email, system) via `specialArgs` or `extraSpecialArgs`.
-- Desktop programs are gated in `home-manager/desktop.nix` — only `nixos` and `mac` import it. Linux gets the full set (apps, browsers, vscode, alacritty, ghostty, wm/); macOS gets only vscode, alacritty and ghostty (GUI apps come from homebrew casks); `wsl` and `linux-server` get none.
+- Desktop programs are gated in `home-manager/desktop.nix` — only `nixos` and `mac` import it. Linux gets the full set (apps, browsers, vscode, ghostty, wm/); macOS gets only vscode and ghostty (GUI apps come from homebrew casks); `wsl` and `linux-server` get none.
 - Programs are organized into category subdirectories under `home-manager/programs/`; each category has a `default.nix` and optionally a `desktop.nix` for graphical-only entries.
 - nixvim is configured via the `nixvim` flake input and lives in `home-manager/programs/editor/nixvim/`.
 - `nix-darwin` configs live separately from `home-manager` configs; the mac host wires them together in `hosts/mac/default.nix`.
