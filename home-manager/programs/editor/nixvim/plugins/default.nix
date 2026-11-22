@@ -1,6 +1,6 @@
 {
   imports = [
-    ./indent-blanklines
+    # ./indent-blanklines
     ./lazygit
     ./mini
     ./neo-tree
