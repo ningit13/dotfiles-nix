@@ -6,6 +6,7 @@
       onboarding = false;
 
       keys = {
+        prefix = "ctrl+f";
         detach = "prefix+d";
         next_workspace = "prefix+ctrl+]";
         navigate_workspace_up = "k";
