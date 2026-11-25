@@ -22,6 +22,7 @@
       cursorline = true;
       # Enable global status line.
       laststatus = 3;
+      signcolumn = "yes:2";
 
       # Use system clipboard for all yank/paste operations
       clipboard = "unnamedplus";
@@ -30,6 +31,8 @@
       whichwrap = "b,s,l,h,<,>,[,]";
 
       expandtab = true;
+      cindent = true;
+      ignorecase = true;
 
       # Disable swap files and enable undo files for persistent undo history
       swapfile = false;
