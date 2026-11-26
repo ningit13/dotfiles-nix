@@ -33,6 +33,7 @@
       expandtab = true;
       cindent = true;
       ignorecase = true;
+      completeopt = "menuone,noselect,fuzzy";
 
       # Disable swap files and enable undo files for persistent undo history
       swapfile = false;
@@ -42,6 +43,16 @@
 
     extraConfigLua = ''
       vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#613d3d" })
+
+      vim.diagnostic.config({
+        jump = {
+          on_jump = function(diagnostic, bufnr)
+            if diagnostic then
+              vim.diagnostic.open_float({ bufnr = bufnr, scope = 'cursor', focus = false })
+            end
+          end,
+        },
+      })
     '';
 
     imports = [
