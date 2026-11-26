@@ -4,6 +4,7 @@
       cursorword = { };
       icons = { };
       statusline = { };
+      starter = { };
     };
 
     # Show only the filename in the statusline, not the full path

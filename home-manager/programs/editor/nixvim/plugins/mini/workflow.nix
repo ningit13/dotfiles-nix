@@ -8,6 +8,10 @@
       };
       git = { };
       pick = { };
+      sessions = {
+        directory.__raw = "vim.fn.stdpath('data') .. '/session'";
+        file = "";
+      };
     };
   };
 
