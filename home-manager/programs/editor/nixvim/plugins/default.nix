@@ -13,6 +13,13 @@
       action = ":LazyGit<CR>";
       options.desc = "Open LazyGit with floating window";
     }
+    {
+      mode = [ "n" ];
+      key = "<leader>mv";
+      action = ":Markview splitToggle<CR>";
+      options.desc = "Toggles `splitview` for current buffer.";
+    }
+
   ];
 
   plugins.indent-blankline = {
@@ -20,6 +27,10 @@
     settings = {
       indent.char = "▏";
     };
+  };
+
+  plugins.markview = {
+    enable = true;
   };
 
   imports = [
